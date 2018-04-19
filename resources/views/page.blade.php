@@ -89,6 +89,7 @@
               <a href="https://px.a8.net/svt/ejp?a8mat=2ZEUCM+APSZV6+407E+614CZ" target="_blank">エンジニア、プログラマー必見！翔泳社の通販『SEshop』はIT・開発関連書籍が豊富！全国どこでも送料無料でお得です！</a>
             </center></p>
             <p><center><a href="{{$detail->url}}" class="btn btn-primary" rel="nofollow" target="_blank">記事を読む</a></center></p>
+            <p><center><a href="https://binary-option-kouryaku.com/highlowstart/" rel="nofollow" target="_blank">[PR]【今なら5000円キャッシュバック】バイナリーオプションの始め方／口座開設→入金→取引まで実例解説</a></center></p>
           </div>
             <div class="block">
         <a class="ad" href="https://px.a8.net/svt/ejp?a8mat=2ZEUCM+6NCD1U+358E+61JSH" target="_blank" rel="nofollow">
