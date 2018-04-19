@@ -13,7 +13,6 @@
 @endisset
 
 @section('content')
-aaa
 <div class="panel panel-default">
   @if(isset($detail) || isset($word))
   <div class="panel-heading"><h1 class="small">@yield('title')</h1></div>
