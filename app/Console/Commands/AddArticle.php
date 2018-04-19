@@ -57,7 +57,7 @@ class AddArticle extends Command
             $title = $node->filter('title')->text();
             foreach($words as $w){
               $text = $w->text;
-              if(preg_match("/{$text}/",$title)){
+              if(preg_match('/' . $text . '/',$title)){
                 $url = $node->filter('link')->text();
                 $this->setArticle($url,$title,$w);
                 break;
