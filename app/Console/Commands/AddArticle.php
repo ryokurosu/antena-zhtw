@@ -68,7 +68,11 @@ class AddArticle extends Command
         } catch (Exception $e) {
           $reader->delete();
           if(\Config::get('app.name') == 'シャドウバースまとめ'){
-            \Artisan::call('delete:reader',['rss' => $reader->url]);
+            try{
+              \Artisan::call('delete:reader',['rss' => $reader->url]);
+            }catch(Exception $e){
+
+            }
           }
           postToDiscord($e);
           continue;

@@ -43,7 +43,6 @@ class ArticleMaintenance extends Command
      */
     public function handle()
     {
-
         \App\Article::inRandomOrder()->chunk(5000,function($articles){
             foreach($articles as $article){
 
