@@ -61,7 +61,7 @@ public function wordChecker($text){
     $words = Word::all();
     $check = true;
     foreach($words as $word){
-        if(strpos($word->text,$text) !== false){
+        if(strpos($text,$word->text) !== false){
             //'abcd'のなかに'bc'が含まれている場合
             $check =  false;
             break;
