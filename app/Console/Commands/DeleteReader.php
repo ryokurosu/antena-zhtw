@@ -43,7 +43,7 @@ class DeleteReader extends Command
 
         $txt = file_get_contents($pass);
         $txt = str_replace($rss,'',$txt);
-        $txt = preg_replace("{\n\n}", "\n", $txt);
+        $txt = preg_replace("<\n\n>", "\n", $txt);
         try{
             file_put_contents($pass, $txt);
             echo "$rss を削除しました\n";
