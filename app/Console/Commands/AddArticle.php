@@ -56,7 +56,8 @@ class AddArticle extends Command
           $sitemap->filter('item')->each(function($node) use ($words) {
             $title = $node->filter('title')->text();
             foreach($words as $w){
-              if(preg_match('/'.$w->text.'/',$title)){
+              $text = $w->text;
+              if(preg_match("/{$text}/",$title)){
                 $url = $node->filter('link')->text();
                 $this->setArticle($url,$title,$w);
                 break;

@@ -41,7 +41,7 @@ class AddWord extends Command
     {
      $text = $this->argument('text');
      try {
-        if(!ctype_alnum($text) && !Word::where('text','like',"%{$text}%")->first()){
+        if(!ctype_alnum($text) && $this->wordChecker($text)){
             $w = Word::create([
                 'text' => $text,
             ]);
@@ -57,4 +57,18 @@ class AddWord extends Command
     }
 }
 
+public function wordChecker($text){
+    $words = Word::all();
+    $check = true;
+    foreach($words as $word){
+            echo "|";
+        if(strpos($word,$text) === false){
+            echo "*";
+            //'abcd'のなかに'bc'が含まれている場合
+            $check =  false;
+            break;
+        }
+    }
+    return $check;
+}
 }
