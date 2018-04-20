@@ -7,7 +7,7 @@ define('HOOKNAME','ANTENA HOOK');
 
 function postToDiscord($e)
 {
-	$content = "@everyone ```". PHP_EOL.date("Y/m/d H:i:s"). PHP_EOL .\Config::get('app.name').' '.\Config::get('app.url').  PHP_EOL;
+	$content = "@everyone ". PHP_EOL.date("Y/m/d H:i:s"). PHP_EOL .\Config::get('app.name').' '.\Config::get('app.url').  PHP_EOL . "```";
 
 	if(isset($_SERVER['REQUEST_URI'])){
 		$content .= "[URL]    ".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . PHP_EOL;
@@ -46,7 +46,7 @@ function postToDiscord($e)
 }
 
 function noticeDiscord($content){
-	$data = array("content" => "```". PHP_EOL.date("Y/m/d H:i:s"). PHP_EOL .\Config::get('app.name').' '.\Config::get('app.url').  PHP_EOL ."$content". PHP_EOL."```", "username" => HOOKNAME);
+	$data = array("content" => date("Y/m/d H:i:s"). PHP_EOL .\Config::get('app.name').' '.\Config::get('app.url').  PHP_EOL ."``` {$content}". PHP_EOL."```", "username" => HOOKNAME);
 	$curl = curl_init(WEBHOOK);
 	curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 	curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
