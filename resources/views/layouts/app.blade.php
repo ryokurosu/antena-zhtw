@@ -63,17 +63,17 @@
         enable_page_level_ads: true
       });
     </script>
- -->
+  -->
 
 
-  </head>
-  <body>
-    <div id="app">
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
 
-            <!-- Collapsed Hamburger -->
+          <!-- Collapsed Hamburger -->
                     <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
@@ -139,9 +139,9 @@
                       </div>
                       <div class="block">
                         <center>
-                          <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+EV8SPE+3Y8A+5ZEMP" target="_blank" rel="nofollow">
-                            <img border="0" width="468" height="60" alt="" src="https://www25.a8.net/svt/bgt?aid=180421574899&wid=005&eno=01&mid=s00000018433001005000&mc=1"></a>
-                            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=2ZF26E+EV8SPE+3Y8A+5ZEMP" alt="">
+                          <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9XTMFM+5KU+6BEQ9" target="_blank" rel="nofollow">
+                            <img border="0" width="320" height="50" alt="" src="https://www26.a8.net/svt/bgt?aid=180421576601&wid=005&eno=01&mid=s00000000723001061000&mc=1"></a>
+                            <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=2ZF26G+9XTMFM+5KU+6BEQ9" alt="">
                           </center>
                         </div>
                         <div class="block">
@@ -198,104 +198,105 @@
                         </div>
                         <div class="block">
                           <center>
-                            <a href="https://px.a8.net/svt/ejp?a8mat=2ZEUCM+6Z915E+2U8+15ORS1" target="_blank" rel="nofollow">
-                              <img border="0" width="234" height="60" alt="" src="https://www23.a8.net/svt/bgt?aid=180411430422&wid=005&eno=01&mid=s00000000368007002000&mc=1"></a>
-                              <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZEUCM+6Z915E+2U8+15ORS1" alt="">
-                            </center>
+                           <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9WMR82+1LW6+HZ2R6" target="_blank" rel="nofollow">保証人不要・全国対応のローン！</a>
+                           <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=2ZF26G+9WMR82+1LW6+HZ2R6" alt="">
+                         </center>
+                       </div>
+
+                       <li class="list-group-item active">新着記事</li>
+                       @foreach(\App\Article::latest()->take(20)->get() as $article)
+                       <li class="list-group-item">
+                        <div class="padding-wrap">
+                          <div class="col-xs-3 thumbnail">
+                            <a class="thumbnail-link" href="{{$article->path()}}">
+                              <img src="{{$article->imagePath()}}" alt="{{$article->title}}">
+                            </a>
                           </div>
-
-                          <li class="list-group-item active">新着記事</li>
-                          @foreach(\App\Article::latest()->take(20)->get() as $article)
-                          <li class="list-group-item">
-                            <div class="padding-wrap">
-                              <div class="col-xs-3 thumbnail">
-                                <a class="thumbnail-link" href="{{$article->path()}}">
-                                  <img src="{{$article->imagePath()}}" alt="{{$article->title}}">
-                                </a>
-                              </div>
-                              <div class="col-xs-9 title">
-                                <a class="title-link" href="{{$article->path()}}">
-                                 {{$article->title}}
-                               </a>
-                               <a class="description-link">
-                                @php
-                                echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
-                                @endphp
-                              </a>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="col-xs-12 cat">
-                              <span class="cat-item">
-                                {{$article->word->text}}
-                              </span>
-                              <span class="cat-domain">
-                                @php
-                                echo parse_url($article->url, PHP_URL_HOST);
-                                @endphp
-                              </span>
-                              <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
-                            </div>
-                            <span class="view">{{$article->view}} view</span>
-                          </div>
-                        </li>
-                        @endforeach
-                      </ul>
-
-                      <center>
-                        <div id="hitbtc-ticker" class="hit-medium" data-hue="-5"></div>
-                        <script type="text/javascript">
-                          (function() {
-                            var po = document.createElement("script");
-                            po.type = "text/javascript";
-                            po.async = true;
-                            po.src = "https://hitbtc.com/get_widget?pair=ethbtc";
-                            var s = document.getElementsByTagName("script")[0];
-                            s.parentNode.insertBefore(po, s);
-                          })();
-                        </script>
-                      </center>
-
-
-                      <ul class="list-group">
-                        <li class="list-group-item active">タグ</li>
-                      </ul>
-                      <div id="tag-area">
-                        @foreach(\App\Word::inRandomOrder()->get() as $word)
-                        @php
-                        $font = (100 + rand(1,60)) / 10;
-                        $opacity = $font / 16;
-                        @endphp
-                        <a class="tag" href="{{$word->path()}}" style="font-size:{{$font}}px;opacity:{{$opacity}}">{{$word->text}}</a>
-                        @endforeach
-                      </div>
-
-                      <div class="block">
-                        <center><a href="https://px.a8.net/svt/ejp?a8mat=2ZEUCM+BGLI36+3ZNO+5ZU29" target="_blank" rel="nofollow">
-                          <img border="0" width="300" height="250" alt="" src="https://www20.a8.net/svt/bgt?aid=180411430693&wid=005&eno=01&mid=s00000018618001007000&mc=1"></a>
-                          <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=2ZEUCM+BGLI36+3ZNO+5ZU29" alt=""></center>
+                          <div class="col-xs-9 title">
+                            <a class="title-link" href="{{$article->path()}}">
+                             {{$article->title}}
+                           </a>
+                           <a class="description-link">
+                            @php
+                            echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
+                            @endphp
+                          </a>
                         </div>
-
+                        <div class="clear"></div>
+                        <div class="col-xs-12 cat">
+                          <span class="cat-item">
+                            {{$article->word->text}}
+                          </span>
+                          <span class="cat-domain">
+                            @php
+                            echo parse_url($article->url, PHP_URL_HOST);
+                            @endphp
+                          </span>
+                          <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+                        </div>
+                        <span class="view">{{$article->view}} view</span>
                       </div>
+                    </li>
+                    @endforeach
+                  </ul>
+
+                  <center>
+                    <div id="hitbtc-ticker" class="hit-medium" data-hue="-5"></div>
+                    <script type="text/javascript">
+                      (function() {
+                        var po = document.createElement("script");
+                        po.type = "text/javascript";
+                        po.async = true;
+                        po.src = "https://hitbtc.com/get_widget?pair=ethbtc";
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(po, s);
+                      })();
+                    </script>
+                  </center>
+
+
+                  <ul class="list-group">
+                    <li class="list-group-item active">タグ</li>
+                  </ul>
+                  <div id="tag-area">
+                    @foreach(\App\Word::inRandomOrder()->get() as $word)
+                    @php
+                    $font = (100 + rand(1,60)) / 10;
+                    $opacity = $font / 16;
+                    @endphp
+                    <a class="tag" href="{{$word->path()}}" style="font-size:{{$font}}px;opacity:{{$opacity}}">{{$word->text}}</a>
+                    @endforeach
+                  </div>
+
+                  <div class="block">
+                    <center>
+                      <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9XTMFM+5KU+65EOH" target="_blank" rel="nofollow">
+                        <img border="0" width="468" height="60" alt="" src="https://www20.a8.net/svt/bgt?aid=180421576601&wid=005&eno=01&mid=s00000000723001033000&mc=1"></a>
+                        <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=2ZF26G+9XTMFM+5KU+65EOH" alt="">
+                      </center>
                     </div>
 
-                    <footer>
-                      <p style="margin:0;padding:16px 0;color:#aaa;text-align:right;font-size:.8rem;">© 2018 {{config('app.name')}}</p>
-                    </footer>
+                  </div>
+                </div>
 
-                    <!-- Scripts -->
-                    <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <script>
-                      /* DOMの読み込み完了後に処理 */
-                      if(window.addEventListener) {
-                        window.addEventListener( "load" , shareButtonReadSyncer, false );
-                      }else{
-                        window.attachEvent( "onload", shareButtonReadSyncer );
-                      }
+                <footer>
+                  <p style="margin:0;padding:16px 0;color:#aaa;text-align:right;font-size:.8rem;">© 2018 {{config('app.name')}}</p>
+                </footer>
 
-                      /* シェアボタンを読み込む関数 */
-                      function shareButtonReadSyncer(){
-                        LineIt.loadButton();
+                <!-- Scripts -->
+                <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script>
+                  /* DOMの読み込み完了後に処理 */
+                  if(window.addEventListener) {
+                    window.addEventListener( "load" , shareButtonReadSyncer, false );
+                  }else{
+                    window.attachEvent( "onload", shareButtonReadSyncer );
+                  }
+
+                  /* シェアボタンを読み込む関数 */
+                  function shareButtonReadSyncer(){
+                    LineIt.loadButton();
 // Facebook
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

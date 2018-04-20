@@ -22,6 +22,10 @@
       <p><center>
         <a href="https://uranai-cafe.jp/animal/" rel="nofollow" target="_blank">[PR]動物キャラ占い(無料)で、あなたの性格・恋愛傾向・毎日の運勢・今後の人生の運気がわかります。</a>
       </center></p>
+      <p><center>
+        <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9WMR82+1LW6+HYV1E" target="_blank" rel="nofollow">全国対応のローン、キャレント!</a>
+        <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2ZF26G+9WMR82+1LW6+HYV1E" alt="">
+      </center></p>
     </div>
     <div class="meta-wrap">
       <p>{{$detail->description}}</p>
@@ -91,66 +95,68 @@
           </div>
           <div class="meta-wrap block">
             <p><center>
-              <a href="https://px.a8.net/svt/ejp?a8mat=2ZEUCM+APSZV6+407E+614CZ" target="_blank">エンジニア、プログラマー必見！翔泳社の通販『SEshop』はIT・開発関連書籍が豊富！全国どこでも送料無料でお得です！</a>
-            </center></p>
-            <p><center><a href="{{$detail->url}}" class="btn btn-primary" rel="nofollow" target="_blank">記事を読む</a></center></p>
-            <p><center><a href="https://binary-option-kouryaku.com/highlowstart/" rel="nofollow" target="_blank">[PR]【今なら5000円キャッシュバック】バイナリーオプションの始め方／口座開設→入金→取引まで実例解説</a></center></p>
-          </div>
-          <div class="block">
-            <center>
-              <a href="https://px.a8.net/svt/ejp?a8mat=2ZAK4G+8CNZL6+1E32+66H9D" target="_blank" rel="nofollow">
-                <img border="0" width="468" height="60" alt="" src="https://www26.a8.net/svt/bgt?aid=180211552505&wid=004&eno=01&mid=s00000006491001038000&mc=1"></a>
-                <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2ZAK4G+8CNZL6+1E32+66H9D" alt="">
-              </center>
+              <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9WMR82+1LW6+I17WX" target="_blank" rel="nofollow">
+                <img border="0" width="468" height="60" alt="" src="https://www26.a8.net/svt/bgt?aid=180421576599&wid=005&eno=01&mid=s00000007503003029000&mc=1"></a>
+                <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZF26G+9WMR82+1LW6+I17WX" alt="">
+              </center></p>
+              <p><center><a href="{{$detail->url}}" class="btn btn-primary" rel="nofollow" target="_blank">記事を読む</a></center></p>
+              <p><center><a href="https://binary-option-kouryaku.com/highlowstart/" rel="nofollow" target="_blank">[PR]【今なら5000円キャッシュバック】バイナリーオプションの始め方／口座開設→入金→取引まで実例解説</a></center></p>
             </div>
+            <div class="block">
+              <center>
+                <a href="https://px.a8.net/svt/ejp?a8mat=2ZAK4G+8CNZL6+1E32+66H9D" target="_blank" rel="nofollow">
+                  <img border="0" width="468" height="60" alt="" src="https://www26.a8.net/svt/bgt?aid=180211552505&wid=004&eno=01&mid=s00000006491001038000&mc=1"></a>
+                  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2ZAK4G+8CNZL6+1E32+66H9D" alt="">
+                </center>
+              </div>
 
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-format="autorelaxed"
-            data-ad-client="ca-pub-5105681373982866"
-            data-ad-slot="{{config('app.ad_id')}}"></ins>
-            <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-           </script>
-           
-           <ul class="list-group noback">
-            @foreach($articles as $article)
-            <li class="list-group-item">
-              <div class="padding-wrap">
-                <div class="col-xs-3 thumbnail">
-                  <a class="thumbnail-link" href="{{$article->path()}}">
-                    <img src="{{$article->imagePath()}}" alt="{{$article->title}}">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-format="autorelaxed"
+              data-ad-client="ca-pub-5105681373982866"
+              data-ad-slot="{{config('app.ad_id')}}"></ins>
+              <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+             </script>
+
+             <ul class="list-group noback">
+              @foreach($articles as $article)
+              <li class="list-group-item">
+                <div class="padding-wrap">
+                  <div class="col-xs-3 thumbnail">
+                    <a class="thumbnail-link" href="{{$article->path()}}">
+                      <img src="{{$article->imagePath()}}" alt="{{$article->title}}">
+                    </a>
+                  </div>
+                  <div class="col-xs-9 title">
+                    <a class="title-link" href="{{$article->path()}}">
+                     {{$article->title}}
+                   </a>
+                   <a class="description-link">
+                    @php
+                    echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
+                    @endphp
                   </a>
                 </div>
-                <div class="col-xs-9 title">
-                  <a class="title-link" href="{{$article->path()}}">
-                   {{$article->title}}
-                 </a>
-                 <a class="description-link">
-                  @php
-                  echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
-                  @endphp
-                </a>
+                <div class="clear"></div>
+                <div class="col-xs-12 cat">
+                  <span class="cat-item">
+                    {{$article->word->text}}
+                  </span>
+                  <span class="cat-domain">
+                    @php
+                    echo parse_url($article->url, PHP_URL_HOST);
+                    @endphp
+                  </span>
+                  <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+                </div>
+                <span class="view">{{$article->view}} view</span>
               </div>
-              <div class="clear"></div>
-              <div class="col-xs-12 cat">
-                <span class="cat-item">
-                  {{$article->word->text}}
-                </span>
-                <span class="cat-domain">
-                  @php
-                  echo parse_url($article->url, PHP_URL_HOST);
-                  @endphp
-                </span>
-                <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
-              </div>
-              <span class="view">{{$article->view}} view</span>
-            </div>
-          </li>
+            </li>
 
-          @endforeach
-        </ul>
+            @endforeach
+          </ul>
+        </div>
       </div>
-    </div>
-    @endsection
+      @endsection
