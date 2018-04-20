@@ -17,7 +17,7 @@ function postToDiscord($e)
 
 	$content .= "[Where]  ".$e->getFile()."：".$e->getLine() . PHP_EOL;
 
-	if(preg_match("/Routing/", $e->getFile())){
+	if(preg_match("/Routing|Builder/", $e->getFile())){
 		return false;
 	}
 
