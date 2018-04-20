@@ -56,8 +56,8 @@ class AddArticle extends Command
           $sitemap->filter('item')->each(function($node) use ($words) {
             $title = $node->filter('title')->text();
             foreach($words as $w){
-              $text = $w->text;
-              if(preg_match("/{$text}/",$title)){
+              if(strpos($title,$w->text) !== false){
+                //'abcd'のなかに'bc'が含まれている場合
                 $url = $node->filter('link')->text();
                 $this->setArticle($url,$title,$w);
                 break;
