@@ -132,16 +132,16 @@
                   <div class="col-xs-12 col-md-6" id="sidebar">
                     <div class="block">
                       <center>
-                        <a href="https://px.a8.net/svt/ejp?a8mat=2ZEUCM+6NCD1U+358E+614CX" target="_blank" rel="nofollow">
-                          <img border="0" width="320" height="50" alt="" src="https://www28.a8.net/svt/bgt?aid=180411430402&wid=005&eno=01&mid=s00000014675001013000&mc=1"></a>
-                          <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZEUCM+6NCD1U+358E+614CX" alt="">
+                        <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+E4GAHE+348+1TXR8X" target="_blank" rel="nofollow">
+                          <img border="0" width="468" height="60" alt="" src="https://www24.a8.net/svt/bgt?aid=180421574854&wid=005&eno=01&mid=s00000000404011075000&mc=1"></a>
+                          <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZF26E+E4GAHE+348+1TXR8X" alt="">
                         </center>
                       </div>
                       <div class="block">
                         <center>
-                          <a href="https://px.a8.net/svt/ejp?a8mat=2ZEUCM+BUVWLU+40BK+5ZEMP" target="_blank" rel="nofollow">
-                            <img border="0" width="320" height="50" alt="" src="https://www20.a8.net/svt/bgt?aid=180411430717&wid=005&eno=01&mid=s00000018704001005000&mc=1"></a>
-                            <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=2ZEUCM+BUVWLU+40BK+5ZEMP" alt="">
+                          <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+EV8SPE+3Y8A+5ZEMP" target="_blank" rel="nofollow">
+                            <img border="0" width="468" height="60" alt="" src="https://www25.a8.net/svt/bgt?aid=180421574899&wid=005&eno=01&mid=s00000018433001005000&mc=1"></a>
+                            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=2ZF26E+EV8SPE+3Y8A+5ZEMP" alt="">
                           </center>
                         </div>
                         <div class="block">
