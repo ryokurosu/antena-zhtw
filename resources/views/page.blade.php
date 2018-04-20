@@ -108,7 +108,7 @@
               style="display:block"
               data-ad-format="autorelaxed"
               data-ad-client="ca-pub-5105681373982866"
-              data-ad-slot="{{config('ad_id')}}"></ins>
+              data-ad-slot="{{config('app.ad_id')}}"></ins>
               <script>
                (adsbygoogle = window.adsbygoogle || []).push({});
              </script>
