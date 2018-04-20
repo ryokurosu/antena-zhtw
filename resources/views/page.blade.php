@@ -33,7 +33,8 @@
       <a class="ad" href="http://bit.ly/2GrwvAS" target="_blank"><img src="https://bitflyer.jp/Images/Affiliate/affi_04_300x250.gif?201709" alt="bitFlyer ビットコインを始めるなら安心・安全な取引所で"></a>
 
       <a class="ad" href="http://bit.ly/2HCjuVE" target="_blank" rel="nofollow">
-        <img border="0" width="300" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=180211552510&wid=004&eno=01&mid=s00000015135002012000&mc=1"></a>
+        <span class="a8ad 3aVtYAE-g7-qPM4e63"></span><script type="text/javascript" src="//statics.a8.net/ad/ad.js"></script><script type="text/javascript">a8adscript('body').showAd({"req": {"mat":"2ZEUCM+APSZV6+407E+BWGDT","alt":"商品リンク","id":"3aVtYAE-g7-qPM4e63"},"goods": {"ejp":"h"+"ttps://www.seshop.com/product/detail/21628","imu":"h"+"ttps://www.seshop.com/static/images/product/21628/L.png"}});</script>
+      </a>
 
       </div>
       <div id="tweet-list">
