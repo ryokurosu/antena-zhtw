@@ -36,8 +36,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('add:article')->cron('* */2 * * * *');
-        $schedule->command('add:access')->cron('*/5 * * * * *');
-        $schedule->command('add:tweet')->cron('*/30 * * * * *');
+        $schedule->command('add:access')->cron('0 * * * * *');
+        $schedule->command('add:tweet')->cron('* */4 * * * *');
         $schedule->command('article:maintenance')->weekly();
         $schedule->command('ping')->cron('0 6 * * * *');
         $schedule->command('get:start')->cron('30 */12 * * * *');
