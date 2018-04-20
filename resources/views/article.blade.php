@@ -23,7 +23,7 @@
       <div class="padding-wrap">
         <div class="col-xs-3 thumbnail">
           <a class="thumbnail-link" href="{{$article->path()}}">
-            <img src="{{$article->imagePath()}}" alt="{{$article->title}}">
+            <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
           </a>
         </div>
         <div class="col-xs-9 title">
