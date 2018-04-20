@@ -35,13 +35,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('add:article')->cron('0 * * * * *');
-        $schedule->command('add:access')->cron('30 */2 * * * *');
-        $schedule->command('add:tweet')->cron('30 */4 * * * *');
+        $schedule->command('add:article')->cron('*/30 * * * * *');
+        $schedule->command('add:access')->cron('30 */1 * * * *');
+        $schedule->command('add:tweet')->cron('0 */2 * * * *');
         $schedule->command('article:maintenance')->weekly();
         $schedule->command('ping')->cron('30 5 * * * *');
         $schedule->command('get:start')->cron('30 */11 * * * *');
-        $schedule->command('add:suggest')->cron('30 19 * * * *');
+        $schedule->command('add:suggest')->cron('0 */6 * * * *');
     }
 
     /**
