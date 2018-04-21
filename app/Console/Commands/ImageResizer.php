@@ -43,7 +43,7 @@ class ImageResizer extends Command
             try{
 
                 $image = Image::make(public_path('images/'.$a->thumbnail));
-                $image->resize(28, null, function ($constraint) {
+                $image->resize(120, null, function ($constraint) {
                   $constraint->aspectRatio();
               });
                 $image->save(public_path('thumbnail/'.$a->thumbnail));
