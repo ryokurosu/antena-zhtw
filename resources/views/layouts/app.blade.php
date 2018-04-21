@@ -132,11 +132,9 @@
                   <div class="col-xs-12 col-md-6" id="sidebar">
                     <div class="block">
                       <center>
-                        <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+E4GAHE+348+1TXR8X" target="_blank" rel="nofollow">
-                          <img border="0" width="468" height="60" alt="" src="https://www24.a8.net/svt/bgt?aid=180421574854&wid=005&eno=01&mid=s00000000404011075000&mc=1"></a>
-                          <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZF26E+E4GAHE+348+1TXR8X" alt="">
-                        </center>
-                      </div>
+                        <script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="ryoprog-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="336"; amzn_assoc_height ="280"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
+                      </center>
+                    </div>
                       <div class="block">
                         <center>
                           <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9XTMFM+5KU+6BEQ9" target="_blank" rel="nofollow">
