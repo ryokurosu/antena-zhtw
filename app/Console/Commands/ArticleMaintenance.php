@@ -43,31 +43,14 @@ class ArticleMaintenance extends Command
      */
     public function handle()
     {
-      $words = Word::orderBy('text','asc')->get();
-      $wordlist = [];
-      foreach ($words as $index => $word) {
-        $text = $word->text;
-       $list = Word::where('text','like',"%{$text}%")->get();
-       foreach($list as $value){
-        if($word->id != $value->id){
-          $wordlist[] = $value->id;
-        }
-       }
-      }
-
-      $wordlist = array_unique($wordlist);
-      $delete_words = Word::whereIn('id',$wordlist)->get();
-      $post = "";
-      foreach($delete_words as $w){
-        $post .=  $w->text . "is deleted." . PHP_EOL;
-        $w->delete();
-      }
-
-      noticeDiscord($post);
-
 
       \App\Article::inRandomOrder()->chunk(5000,function($articles){
         foreach($articles as $article){
+          $word_id = $article->word_id;
+          if(!Word::where('id',$word_id)->first()){
+            $article->delete();
+            continue;
+          }
 
           $url = $article->url;
 
