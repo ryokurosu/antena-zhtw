@@ -40,11 +40,12 @@ class AddAccessTicker extends Command
 
         $time_start = microtime(true);
         $count = 0;
-        foreach(\App\Article::query()->cursor() as $v){
-            $v->increment('view');
-            $count++;
-        }
-
+        \App\Article::inRandomOrder()->chunk(500,function($articles) use (&$count){
+            foreach($articles as $v){
+                $v->increment('view');
+                $count++;
+            }
+        });
         $time = microtime(true) - $time_start;
         $time = number_format($time,2);
         noticeDiscord("Ticker {$count} articles. {$time} s");
