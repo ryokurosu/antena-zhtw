@@ -47,6 +47,9 @@ class SuggestWord extends Command
       }else{
         $words = Word::inRandomOrder()->get();
       }
+      if(count($words) > 500){
+        return false;
+      }
       foreach ($words as $word) {
         try {
           $client = new Client();
