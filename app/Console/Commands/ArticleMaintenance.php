@@ -46,11 +46,6 @@ class ArticleMaintenance extends Command
 
       \App\Article::inRandomOrder()->chunk(5000,function($articles){
         foreach($articles as $article){
-          $word_id = $article->word_id;
-          if(!Word::where('id',$word_id)->first()){
-            $article->delete();
-            continue;
-          }
 
           $url = $article->url;
 

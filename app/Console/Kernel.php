@@ -22,6 +22,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\AddAccessTicker::class,
         \App\Console\Commands\GetStart::class,
         \App\Console\Commands\ArticleMaintenance::class,
+        \App\Console\Commands\WordMaintenance::class,
         \App\Console\Commands\GetTweet::class,
         \App\Console\Commands\DeleteReader::class,
         \App\Console\Commands\SuggestWord::class,
@@ -39,6 +40,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('add:access')->cron('30 */4 * * * *');
         $schedule->command('add:tweet')->cron('30 */6 * * * *');
         $schedule->command('article:maintenance')->weekly();
+        $schedule->command('word:maintenance')->cron('*/30 * * * * *');
         $schedule->command('ping')->cron('30 5 * * * *');
         $schedule->command('get:start')->cron('30 */11 * * * *');
         $schedule->command('add:suggest')->cron('0 */6 * * * *');
