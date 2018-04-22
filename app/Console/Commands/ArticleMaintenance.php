@@ -106,5 +106,29 @@ class ArticleMaintenance extends Command
         echo "|";
       }
     });
+      noticeDiscord('article:maintenance');
+
+      $files = \File::files(public_path('images/'));
+      $output = "";
+      foreach($files as $f){
+        if(!\App\Article::where('thumbnail',$f->getFilename())->first()){
+          \File::delete($f);
+          if (!\File::exists($f)) {
+            $output .= $f->getFilename()."は削除しました".PHP_EOL;
+          }
+        }
+      }
+      noticeDiscord($output);
+
+      $files = \File::files(public_path('thumbnail/'));
+      $output = "";
+      foreach($files as $f){
+        if(!\App\Article::where('thumbnail',$f->getFilename())->first()){
+          \File::delete($f);
+          if (!\File::exists($f)) {
+            $output .= $f->getFilename()."は削除しました".PHP_EOL;
+          }
+        }
+      }
     }
   }

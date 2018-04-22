@@ -37,7 +37,6 @@ class AddAccessTicker extends Command
      */
     public function handle()
     {
-
         $time_start = microtime(true);
         $count = 0;
         \App\Article::inRandomOrder()->chunk(500,function($articles) use (&$count){
