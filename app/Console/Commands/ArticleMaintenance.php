@@ -17,7 +17,7 @@ class ArticleMaintenance extends Command
      *
      * @var string
      */
-    protected $signature = 'article:maintenance {all?}';
+    protected $signature = 'article:maintenance';
 
     /**
      * The console command description.
@@ -103,11 +103,7 @@ class ArticleMaintenance extends Command
     // });
     //   noticeDiscord('article:maintenance');
     //   
-      if($this->argument('all')){
-        $article = \App\Article::orderBy('updated_at');
-      }else{
-        $article = \App\Article::orderBy('updated_at')->take(1000);
-      }
+        $article = \App\Article::orderBy('updated_at')->take(3000);
         $files = \File::files(public_path('images/'));
         $output = "";
         $delete_list = [];
