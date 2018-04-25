@@ -17,7 +17,7 @@ class ArticleMaintenance extends Command
      *
      * @var string
      */
-    protected $signature = 'article:maintenance';
+    protected $signature = 'article:maintenance {all?}';
 
     /**
      * The console command description.
@@ -102,28 +102,35 @@ class ArticleMaintenance extends Command
     //   }
     // });
     //   noticeDiscord('article:maintenance');
-
-      $files = \File::files(public_path('images/'));
-      $output = "";
-      foreach($files as $f){
-        if(!\App\Article::where('thumbnail',$f->getFilename())->first()){
-          \File::delete($f);
-          if (!\File::exists($f)) {
-            $output .= $f->getFilename()."は削除しました".PHP_EOL;
-            sleep(1);
+    //   
+      if($this->argument('all')){
+        $article = \App\Article::orderBy('updated_at');
+      }else{
+        $article = \App\Article::orderBy('updated_at')->take(1000);
+      }
+        $files = \File::files(public_path('images/'));
+        $output = "";
+        $delete_list = [];
+        foreach($files as $f){
+          if(!$article->where('thumbnail',$f->getFilename())->first()){
+            \File::delete($f);
+            if (!\File::exists($f)) {
+              $output .= $f->getFilename()."は削除しました".PHP_EOL;
+              $delete_list[] = $f->getFilename();
+              sleep(1);
+            }
           }
         }
-      }
-      noticeDiscord($output);
+        noticeDiscord($output);
 
-      $files = \File::files(public_path('thumbnail/'));
-      $output = "";
-      foreach($files as $f){
-        if(!\App\Article::where('thumbnail',$f->getFilename())->first()){
-          \File::delete($f);
-          if (!\File::exists($f)) {
-            $output .= $f->getFilename()."は削除しました".PHP_EOL;
-            sleep(1);
+        $files = \File::files(public_path('thumbnail/'));
+        $output = "";
+        foreach($files as $f){
+          if(in_array($f->getFilename(),$delete_list)){
+            \File::delete($f);
+            if (!\File::exists($f)) {
+              sleep(1);
+            }
           }
         }
       }
