@@ -44,7 +44,7 @@ class ArticleMaintenance extends Command
     public function handle()
     {
 
-      \App\Article::inRandomOrder()->chunk(5000,function($articles){
+      \App\Article::inRandomOrder()->take(1000)->chunk(500,function($articles){
         foreach($articles as $article){
 
           $url = $article->url;
@@ -110,6 +110,7 @@ class ArticleMaintenance extends Command
           \File::delete($f);
           if (!\File::exists($f)) {
             $output .= $f->getFilename()."は削除しました".PHP_EOL;
+            sleep(1);
           }
         }
       }
@@ -122,6 +123,7 @@ class ArticleMaintenance extends Command
           \File::delete($f);
           if (!\File::exists($f)) {
             $output .= $f->getFilename()."は削除しました".PHP_EOL;
+            sleep(1);
           }
         }
       }

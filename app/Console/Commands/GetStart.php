@@ -60,6 +60,6 @@ class GetStart extends Command
 
     noticeDiscord('get:start done');
 
-    \Artisan::call('image:resize');
+    // \Artisan::call('image:resize');
 }
 }
