@@ -44,64 +44,64 @@ class ArticleMaintenance extends Command
     public function handle()
     {
 
-      \App\Article::inRandomOrder()->take(1000)->chunk(500,function($articles){
-        foreach($articles as $article){
+    //   \App\Article::orderBy('updated_at')->take(1000)->chunk(500,function($articles){
+    //     foreach($articles as $article){
 
-          $url = $article->url;
+    //       $url = $article->url;
 
-          $client = new Client();
-          $crawler = $client->request('GET', $url);
-          $imageUrl = '';
-          $description = $article->description;
+    //       $client = new Client();
+    //       $crawler = $client->request('GET', $url);
+    //       $imageUrl = '';
+    //       $description = $article->description;
 
-          try{
-           $crawler->filter('meta')->each(function($node) use (&$imageUrl,&$description){
-            if($node->attr('property') =='og:image'){
-             $imageUrl =  $node->attr('content');
-           }
-           if($node->attr('property') =='og:description'){
-             $description =  $node->attr('content');
-           }
-         });
-           $title = $crawler->filter('title')->text();
+    //       try{
+    //        $crawler->filter('meta')->each(function($node) use (&$imageUrl,&$description){
+    //         if($node->attr('property') =='og:image'){
+    //          $imageUrl =  $node->attr('content');
+    //        }
+    //        if($node->attr('property') =='og:description'){
+    //          $description =  $node->attr('content');
+    //        }
+    //      });
+    //        $title = $crawler->filter('title')->text();
 
-           $imageUrl = strtok($imageUrl, '?');
-           $image = Image::make(file_get_contents($imageUrl));
-           $temp = explode('.',$imageUrl);
-           $extension = $temp[count($temp) - 1];
+    //        $imageUrl = strtok($imageUrl, '?');
+    //        $image = Image::make(file_get_contents($imageUrl));
+    //        $temp = explode('.',$imageUrl);
+    //        $extension = $temp[count($temp) - 1];
 
-           $image->resize(750, null, function ($constraint) {
-            $constraint->aspectRatio();
-          });
+    //        $image->resize(750, null, function ($constraint) {
+    //         $constraint->aspectRatio();
+    //       });
 
-           $imageName = makeRandStr(8).'.'.$extension;
-           $image->save(public_path('images/'.$imageName));
+    //        $imageName = makeRandStr(8).'.'.$extension;
+    //        $image->save(public_path('images/'.$imageName));
 
-           $image->resize(120, null, function ($constraint) {
-            $constraint->aspectRatio();
-          });
+    //        $image->resize(120, null, function ($constraint) {
+    //         $constraint->aspectRatio();
+    //       });
 
-           $image->save(public_path('thumbnail/'.$imageName));
+    //        $image->save(public_path('thumbnail/'.$imageName));
 
-         }catch(Exception $e){
-          echo $e->getLine().":".$e->getMessage()."\n";
-          $article->fill([
-            'url' => $url,
-            'title' => $title,
-            'description' => $description,
-          ])->save();
+    //      }catch(Exception $e){
+    //       echo $e->getLine().":".$e->getMessage()."\n";
+    //       $article->fill([
+    //         'url' => $url,
+    //         'title' => $title,
+    //         'description' => $description,
+    //       ])->save();
 
-        }
-        $article->fill([
-          'url' => $url,
-          'title' => $title,
-          'description' => $description,
-          'thumbnail' => $imageName,
-        ])->save();
-        echo "|";
-      }
-    });
-      noticeDiscord('article:maintenance');
+    //     }
+    //     $article->fill([
+    //       'url' => $url,
+    //       'title' => $title,
+    //       'description' => $description,
+    //       'thumbnail' => $imageName,
+    //     ])->save();
+    //     echo "|";
+    //   }
+    // });
+    //   noticeDiscord('article:maintenance');
 
       $files = \File::files(public_path('images/'));
       $output = "";
