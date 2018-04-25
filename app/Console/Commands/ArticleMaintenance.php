@@ -135,4 +135,3 @@ class ArticleMaintenance extends Command
         }
       }
     }
-  }
