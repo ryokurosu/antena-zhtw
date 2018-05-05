@@ -39,7 +39,7 @@ class AddAccessTicker extends Command
     {
         $time_start = microtime(true);
         $count = 0;
-        \App\Article::orderBy('updated_at','desc')->take(2000)->chunk(500,function($articles) use (&$count){
+        \App\Article::orderBy('created_at','desc')->take(2000)->chunk(500,function($articles) use (&$count){
             foreach($articles as $v){
                 $v->increment('view');
                 $count++;

@@ -110,16 +110,6 @@
                 </center>
               </div>
 
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-format="autorelaxed"
-              data-ad-client="ca-pub-5105681373982866"
-              data-ad-slot="{{config('app.ad_id')}}"></ins>
-              <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-             </script>
-
              <ul class="list-group noback">
               @foreach($articles as $article)
               <li class="list-group-item">
