@@ -22,10 +22,6 @@
       <p><center>
         <a href="https://uranai-cafe.jp/animal/" rel="nofollow" target="_blank">[PR]動物キャラ占い(無料)で、あなたの性格・恋愛傾向・毎日の運勢・今後の人生の運気がわかります。</a>
       </center></p>
-      <p><center>
-        <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9WMR82+1LW6+HYV1E" target="_blank" rel="nofollow">全国対応のローン、キャレント!</a>
-        <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2ZF26G+9WMR82+1LW6+HYV1E" alt="">
-      </center></p>
     </div>
     <div class="meta-wrap">
       <p>{{$detail->description}}</p>
@@ -42,6 +38,15 @@
 
     </div>
     <div id="tweet-list">
+      <p><center>
+        <a href="https://koikatsu.mykoi.jp/" rel="nofollow" target="_blank">[PR][無料]恋愛や婚活に悩める女性がいい出会いを得るために今すぐ見るべきサイトはこちら</a>
+      </center></p>
+      <p><center>
+        <a href="https://kaso-trade.com/" rel="nofollow" target="_blank">[PR][無料]仮想通貨って結局稼げるの！？初心者が仮想通貨投資で利益を出す方法まとめ</a>
+      </center></p>
+      <p><center>
+        <a href="http://daigakuzyuken-pro.com/" rel="nofollow" target="_blank">[PR]あの「受験の神様」も使っている勉強法を難関大学合格者が毎週更新中</a>
+      </center></p>
       <ul class="list-group noback">
         <li class="list-group-item">
           <p><a href="http://bit.ly/2qB2KIe" rel="nofollow" target="_blank">{{'@kei'}}</a></p>
