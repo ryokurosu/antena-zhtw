@@ -39,17 +39,13 @@ class ImageResizer extends Command
      */
     public function handle()
     {
-        foreach(\App\Article::orderBy('created_at','desc')->get() as $a){
-            try{
-
-                $image = Image::make(public_path('images/'.$a->thumbnail));
-                $image->resize(120, null, function ($constraint) {
-                  $constraint->aspectRatio();
-              });
-                $image->save(public_path('thumbnail/'.$a->thumbnail));
-                echo "|";
-            }catch(Exception $e){
-                echo $e->getMessage();
+        foreach(\App\Article::orderBy('created_at','desc')->take(3000)->cursor() as $a){
+            $thumbnail = $a->thumbnail;
+            if(\File::exists(public_patH('images/'.$thumbnail))){
+                echo "true";
+            }else{
+              $a->fill(['thumbnail' => 'noimage.jpg'])->save();
+              echo "|";
             }
         }
     }
