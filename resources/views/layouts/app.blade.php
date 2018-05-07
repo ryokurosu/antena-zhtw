@@ -131,14 +131,9 @@
                   <div class="col-xs-12 col-md-6" id="sidebar">
                     <div class="block">
                       <center>
-                        <script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="ryoprog-22"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="JP"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="336"; amzn_assoc_height ="280"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
-                      </center>
-                    </div>
-                    <div class="block">
-                      <center>
-                        <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9XTMFM+5KU+6BEQ9" target="_blank" rel="nofollow">
-                          <img border="0" width="320" height="50" alt="" src="https://www26.a8.net/svt/bgt?aid=180421576601&wid=005&eno=01&mid=s00000000723001061000&mc=1"></a>
-                          <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=2ZF26G+9XTMFM+5KU+6BEQ9" alt="">
+                        <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C213V6+CO4+ZYSNL" target="_blank" rel="nofollow">
+                          <img border="0" width="336" height="280" alt="" src="https://www24.a8.net/svt/bgt?aid=180507837729&wid=005&eno=01&mid=s00000001642006041000&mc=1"></a>
+                          <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZGWQL+C213V6+CO4+ZYSNL" alt="">
                         </center>
                       </div>
                       <div class="block">
@@ -189,111 +184,105 @@
 
                       <div class="block">
                         <center>
-                          <a href="http://bit.ly/2oiQ0UJ" target="_top" style="position: relative; display:block;"><div style="position:absolute;width:100%;height:100%;z-index:1;"></div><iframe scrolling="no" style="width: 300px; height: 250px; border: none; outline: none; display: block;" src="https://s3-ap-northeast-1.amazonaws.com/highlow-affiliate-banner/html5/56c69b619378f/banner.html"></iframe></a>
-
+                         <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+CCQWR6+50+4T650H" target="_blank" rel="nofollow">
+                          <img border="0" width="300" height="250" alt="" src="https://www21.a8.net/svt/bgt?aid=180507837747&wid=005&eno=01&mid=s00000000018029086000&mc=1"></a>
+                          <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=2ZGWQL+CCQWR6+50+4T650H" alt="">
                         </center>
                       </div>
                       <div class="block">
                         <center>
-                         <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9WMR82+1LW6+HZ2R6" target="_blank" rel="nofollow">保証人不要・全国対応のローン！</a>
-                         <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=2ZF26G+9WMR82+1LW6+HZ2R6" alt="">
-                       </center>
-                     </div>
-
-                     <li class="list-group-item active">新着記事</li>
-                     @foreach(\App\Article::latest()->take(20)->get() as $article)
-                     <li class="list-group-item">
-                      <div class="padding-wrap">
-                        <div class="col-xs-3 thumbnail">
-                          <a class="thumbnail-link" href="{{$article->path()}}">
-                            <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
-                          </a>
+                          <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+E4GAHE+348+1U1TUP" target="_blank" rel="nofollow">
+                            <img border="0" width="728" height="90" alt="" src="https://www23.a8.net/svt/bgt?aid=180421574854&wid=005&eno=01&mid=s00000000404011094000&mc=1"></a>
+                            <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZF26E+E4GAHE+348+1U1TUP" alt="">
+                          </center>
                         </div>
-                        <div class="col-xs-9 title">
-                          <a class="title-link" href="{{$article->path()}}">
-                           {{$article->title}}
-                         </a>
-                         <a class="description-link">
-                          @php
-                          echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
-                          @endphp
-                        </a>
-                      </div>
-                      <div class="clear"></div>
-                      <div class="col-xs-12 cat">
-                        <span class="cat-item">
-                          {{$article->word->text}}
-                        </span>
-                        <span class="cat-domain">
-                          @php
-                          echo parse_url($article->url, PHP_URL_HOST);
-                          @endphp
-                        </span>
-                        <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
-                      </div>
-                      <span class="view">{{$article->view}} view</span>
-                    </div>
-                  </li>
-                  @endforeach
-                </ul>
 
-                <center>
-                  <div id="hitbtc-ticker" class="hit-medium" data-hue="-5"></div>
-                  <script type="text/javascript">
-                    (function() {
-                      var po = document.createElement("script");
-                      po.type = "text/javascript";
-                      po.async = true;
-                      po.src = "https://hitbtc.com/get_widget?pair=ethbtc";
-                      var s = document.getElementsByTagName("script")[0];
-                      s.parentNode.insertBefore(po, s);
-                    })();
-                  </script>
-                </center>
+                        <li class="list-group-item active">新着記事</li>
+                        @foreach(\App\Article::latest()->take(20)->get() as $article)
+                        <li class="list-group-item">
+                          <div class="padding-wrap">
+                            <div class="col-xs-3 thumbnail">
+                              <a class="thumbnail-link" href="{{$article->path()}}">
+                                <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
+                              </a>
+                            </div>
+                            <div class="col-xs-9 title">
+                              <a class="title-link" href="{{$article->path()}}">
+                               {{$article->title}}
+                             </a>
+                             <a class="description-link">
+                              @php
+                              echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
+                              @endphp
+                            </a>
+                          </div>
+                          <div class="clear"></div>
+                          <div class="col-xs-12 cat">
+                            <span class="cat-item">
+                              {{$article->word->text}}
+                            </span>
+                            <span class="cat-domain">
+                              @php
+                              echo parse_url($article->url, PHP_URL_HOST);
+                              @endphp
+                            </span>
+                            <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+                          </div>
+                          <span class="view">{{$article->view}} view</span>
+                        </div>
+                      </li>
+                      @endforeach
+                    </ul>
 
-
-                <ul class="list-group">
-                  <li class="list-group-item active">タグ</li>
-                </ul>
-                <div id="tag-area">
-                  @foreach(\App\Word::inRandomOrder()->get() as $word)
-                  @php
-                  $font = (100 + rand(1,60)) / 10;
-                  $opacity = $font / 16;
-                  @endphp
-                  <a class="tag" href="{{$word->path()}}" style="font-size:{{$font}}px;opacity:{{$opacity}}">{{$word->text}}</a>
-                  @endforeach
-                </div>
-
-                <div class="block">
-                  <center>
-                    <a href="https://px.a8.net/svt/ejp?a8mat=2ZF26G+9XTMFM+5KU+65EOH" target="_blank" rel="nofollow">
-                      <img border="0" width="468" height="60" alt="" src="https://www20.a8.net/svt/bgt?aid=180421576601&wid=005&eno=01&mid=s00000000723001033000&mc=1"></a>
-                      <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=2ZF26G+9XTMFM+5KU+65EOH" alt="">
+                    <center>
+                     <a href="https://px.a8.net/svt/ejp?a8mat=2TCFED+6WVAQA+50+2HX3HT" target="_blank" rel="nofollow">
+                      <img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=170221045418&wid=005&eno=01&mid=s00000000018015103000&mc=1"></a>
+                      <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2TCFED+6WVAQA+50+2HX3HT" alt="">
                     </center>
+
+
+                    <ul class="list-group">
+                      <li class="list-group-item active">タグ</li>
+                    </ul>
+                    <div id="tag-area">
+                      @foreach(\App\Word::inRandomOrder()->get() as $word)
+                      @php
+                      $font = (100 + rand(1,60)) / 10;
+                      $opacity = $font / 16;
+                      @endphp
+                      <a class="tag" href="{{$word->path()}}" style="font-size:{{$font}}px;opacity:{{$opacity}}">{{$word->text}}</a>
+                      @endforeach
+                    </div>
+
+                    <div class="block">
+                      <center>
+                       <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C2MJGY+CO4+NU729" target="_blank" rel="nofollow">
+                        <img border="0" width="468" height="60" alt="" src="https://www20.a8.net/svt/bgt?aid=180507837730&wid=005&eno=01&mid=s00000001642004004000&mc=1"></a>
+                        <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2ZGWQL+C2MJGY+CO4+NU729" alt="">
+                      </center>
+                    </div>
+
                   </div>
-
                 </div>
-              </div>
 
-              <footer>
-                <p style="margin:0;padding:16px 0;color:#aaa;text-align:right;font-size:.8rem;">© 2018 {{config('app.name')}}</p>
-              </footer>
+                <footer>
+                  <p style="margin:0;padding:16px 0;color:#aaa;text-align:right;font-size:.8rem;">© 2018 {{config('app.name')}}</p>
+                </footer>
 
-              <!-- Scripts -->
-              <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-              <script>
-                /* DOMの読み込み完了後に処理 */
-                if(window.addEventListener) {
-                  window.addEventListener( "load" , shareButtonReadSyncer, false );
-                }else{
-                  window.attachEvent( "onload", shareButtonReadSyncer );
-                }
+                <!-- Scripts -->
+                <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script>
+                  /* DOMの読み込み完了後に処理 */
+                  if(window.addEventListener) {
+                    window.addEventListener( "load" , shareButtonReadSyncer, false );
+                  }else{
+                    window.attachEvent( "onload", shareButtonReadSyncer );
+                  }
 
-                /* シェアボタンを読み込む関数 */
-                function shareButtonReadSyncer(){
-                  LineIt.loadButton();
+                  /* シェアボタンを読み込む関数 */
+                  function shareButtonReadSyncer(){
+                    LineIt.loadButton();
 // Facebook
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
