@@ -29,7 +29,7 @@
     <div class="link-wrap">
       @yield('link-ad')
     </div>
-    <div class="block">
+   <!--  <div class="block">
       <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C6SKPE+3GRY+HXSGH" target="_blank" rel="nofollow">
         <img border="0" width="250" height="250" alt="" src="https://www23.a8.net/svt/bgt?aid=180507837737&wid=005&eno=01&mid=s00000016171003013000&mc=1"></a>
         <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=2ZGWQL+C6SKPE+3GRY+HXSGH" alt="">
@@ -39,7 +39,7 @@
           <img border="0" width="250" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=180507837736&wid=005&eno=01&mid=s00000000404008091000&mc=1"></a>
           <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=2ZGWQL+C6753M+348+1C66K1" alt="">
 
-        </div>
+        </div> -->
         <div id="tweet-list">
           <p><center>
             <a href="https://koikatsu.mykoi.jp/" rel="nofollow" target="_blank">[PR][無料]恋愛や婚活に悩める女性がいい出会いを得るために今すぐ見るべきサイトはこちら</a>
@@ -61,7 +61,7 @@
                 </li>
                 <li class="list-group-item">
                   <p><a href="https://masakuraudo2.com/archives/2051" rel="nofollow" target="_blank">{{'@mama_nerse'}}</a></p>
-                  <p><a style="text-decoration: underline;" href="https://masakuraudo2.com/archives/2051" rel="nofollow" target="_blank">看護師・介護士のセクハラ被害の実態</p>
+                  <p><a style="text-decoration: underline;" href="https://masakuraudo2.com/archives/2051" rel="nofollow" target="_blank">看護師・介護士のセクハラ被害の実態...</p>
                   </li>
                   @foreach($detail->twitters as $tweet)
                   <li class="list-group-item">
@@ -102,22 +102,22 @@
                 <div id="fb-root"></div>
               </div>
               <div class="meta-wrap block">
-                <p><center>
+                <<!-- p><center>
                   <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C7E0B6+50+5MGG9D" target="_blank" rel="nofollow">
                     <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=180507837738&wid=005&eno=01&mid=s00000000018034005000&mc=1"></a>
                     <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZGWQL+C7E0B6+50+5MGG9D" alt="">
-                  </center></p>
+                  </center></p> -->
                   <p><center><a href="{{$detail->url}}" class="btn btn-primary" rel="nofollow" target="_blank">記事を読む</a></center></p>
-                  <p><center><a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+E4GAHE+348+1TQ1GY" target="_blank" rel="nofollow">飲食店、美容院のホームページ作るならグーペで決まり！</a>
-                    <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=2ZF26E+E4GAHE+348+1TQ1GY" alt=""></center></p>
+                  <!-- <p><center><a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+E4GAHE+348+1TQ1GY" target="_blank" rel="nofollow">飲食店、美容院のホームページ作るならグーペで決まり！</a>
+                    <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=2ZF26E+E4GAHE+348+1TQ1GY" alt=""></center></p> -->
                   </div>
-                  <div class="block">
+                 <!--  <div class="block">
                     <center>
                      <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C6SKPE+3GRY+HWXLD" target="_blank" rel="nofollow">
                       <img border="0" width="728" height="90" alt="" src="https://www26.a8.net/svt/bgt?aid=180507837737&wid=005&eno=01&mid=s00000016171003009000&mc=1"></a>
                       <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZGWQL+C6SKPE+3GRY+HWXLD" alt="">
                     </center>
-                  </div>
+                  </div> -->
 
                   <ul class="list-group noback">
                     @foreach($articles as $article)
