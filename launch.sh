@@ -28,3 +28,5 @@ php artisan get:start
 echo "ワードを設定してください。"
 read WORD
 php artisan add:word $WORD true
+nohup php artisan add:article &
+
