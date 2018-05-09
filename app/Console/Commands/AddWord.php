@@ -41,7 +41,7 @@ class AddWord extends Command
     {
      $text = $this->argument('text');
      try {
-        if(!ctype_alnum($text) && $this->wordChecker($text)){
+        if(!ctype_lower($text) && $this->wordChecker($text)){
             $w = Word::create([
                 'text' => $text,
             ]);
