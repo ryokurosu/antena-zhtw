@@ -40,7 +40,7 @@ class GetStart extends Command
     {
 
         /* ファイルポインタをオープン */
-        $file = fopen("https://geeek.jp/antena/app/Console/Commands/reader.txt", "r");
+        $file = fopen("https://geeek.jp/antena_shadomatome/app/Console/Commands/reader.txt", "r");
         var_dump($file);
         /* ファイルを1行ずつ出力 */
         if($file){
