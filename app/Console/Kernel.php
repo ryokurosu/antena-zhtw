@@ -41,7 +41,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('add:tweet')->cron('0 */9 * * * *');
         $schedule->command('article:maintenance')->weekly();
         $schedule->command('word:maintenance')->cron('0 8 */3 * * *');
-        // $schedule->command('ping')->cron('0 6 * * * *');
+        $schedule->command('ping')->cron('0 6 * * * *');
         $schedule->command('get:start')->cron('0 2 * * * *');
         $schedule->command('add:suggest')->cron('0 4 */3 * * *');
     }
