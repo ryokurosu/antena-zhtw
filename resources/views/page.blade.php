@@ -121,6 +121,40 @@
 
                   <ul class="list-group noback">
                     @foreach($articles as $article)
+                    @if($loop->iteration == 1)
+                          <li class="list-group-item">
+                           <div class="padding-wrap">
+                            <div class="col-xs-3 thumbnail">
+                              <a class="thumbnail-link" href="https://lim-jp.com/archives/449">
+                                <img src="http://top.tsite.jp/static/top/sys/contents_image/036/631/669/36631669_107803.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
+                              </a>
+                            </div>
+                            <div class="col-xs-9 title">
+                              <a class="title-link" href="https://lim-jp.com/archives/449">
+                               【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...
+                             </a>
+                             <a class="description-link">
+                              @php
+                              echo mb_strimwidth("ローラのインスタグラムは「写真が素敵」「服が可愛い」と何かと話題です。最近でもニュースになった「バギー」や「ジム」の画像から、ローラの写真加工に関する情報もまとめてみました。", 0, 120, '', 'utf8');
+                              @endphp
+                            </a>
+                          </div>
+                          <div class="clear"></div>
+                          <div class="col-xs-12 cat">
+                            <span class="cat-item">
+                              芸能
+                            </span>
+                            <span class="cat-domain">
+                              @php
+                              echo parse_url("https://lim-jp.com/archives/449", PHP_URL_HOST);
+                              @endphp
+                            </span>
+                            <a href="https://lim-jp.com/archives/449" class="link-btn">サイトへ</a>
+                          </div>
+                          <span class="view">{{$article->view * 2 + 32}} view</span>
+                        </div>
+                      </li>
+                      @endif
                     <li class="list-group-item">
                       <div class="padding-wrap">
                         <div class="col-xs-3 thumbnail">
