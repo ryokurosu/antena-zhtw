@@ -145,42 +145,76 @@
                         <ul class="list-group">
                           <li class="list-group-item active">人気記事</li>
                           @foreach(\App\Article::popular()->take(20)->get() as $article)
+                          @if($loop->iteration == 1)
                           <li class="list-group-item">
                            <div class="padding-wrap">
                             <div class="col-xs-3 thumbnail">
-                              <a class="thumbnail-link" href="{{$article->path()}}">
-                                <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
+                              <a class="thumbnail-link" href="https://lim-jp.com/archives/449">
+                                <img src="http://top.tsite.jp/static/top/sys/contents_image/036/631/669/36631669_107803.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
                               </a>
                             </div>
                             <div class="col-xs-9 title">
-                              <a class="title-link" href="{{$article->path()}}">
-                               {{$article->title}}
+                              <a class="title-link" href="https://lim-jp.com/archives/449">
+                               【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...
                              </a>
                              <a class="description-link">
                               @php
-                              echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
+                              echo mb_strimwidth("ローラのインスタグラムは「写真が素敵」「服が可愛い」と何かと話題です。最近でもニュースになった「バギー」や「ジム」の画像から、ローラの写真加工に関する情報もまとめてみました。", 0, 120, '', 'utf8');
                               @endphp
                             </a>
                           </div>
                           <div class="clear"></div>
                           <div class="col-xs-12 cat">
                             <span class="cat-item">
-                              {{$article->word->text}}
+                              芸能
                             </span>
                             <span class="cat-domain">
                               @php
-                              echo parse_url($article->url, PHP_URL_HOST);
+                              echo parse_url("https://lim-jp.com/archives/449", PHP_URL_HOST);
                               @endphp
                             </span>
-                            <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+                            <a href="https://lim-jp.com/archives/449" class="link-btn">サイトへ</a>
                           </div>
-                          <span class="view">{{$article->view}} view</span>
+                          <span class="view">{{$article->view * 2 + 32}} view</span>
                         </div>
                       </li>
-                      @endforeach
+                      @endif
+                                            <li class="list-group-item">
+                       <div class="padding-wrap">
+                        <div class="col-xs-3 thumbnail">
+                          <a class="thumbnail-link" href="{{$article->path()}}">
+                            <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
+                          </a>
+                        </div>
+                        <div class="col-xs-9 title">
+                          <a class="title-link" href="{{$article->path()}}">
+                           {{$article->title}}
+                         </a>
+                         <a class="description-link">
+                          @php
+                          echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
+                          @endphp
+                        </a>
+                      </div>
+                      <div class="clear"></div>
+                      <div class="col-xs-12 cat">
+                        <span class="cat-item">
+                          {{$article->word->text}}
+                        </span>
+                        <span class="cat-domain">
+                          @php
+                          echo parse_url($article->url, PHP_URL_HOST);
+                          @endphp
+                        </span>
+                        <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+                      </div>
+                      <span class="view">{{$article->view}} view</span>
+                    </div>
+                  </li>
+                  @endforeach
 
-                    </ul>
-                    <ul class="list-group">
+                </ul>
+                <ul class="list-group">
 
                       <!-- <div class="block">
                         <center>
@@ -196,63 +230,63 @@
                             <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZF26E+E4GAHE+348+1U1TUP" alt="">
                           </center>
                         </div>
- -->
-                        <li class="list-group-item active">新着記事</li>
-                        @foreach(\App\Article::latest()->take(20)->get() as $article)
-                        <li class="list-group-item">
-                          <div class="padding-wrap">
-                            <div class="col-xs-3 thumbnail">
-                              <a class="thumbnail-link" href="{{$article->path()}}">
-                                <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
-                              </a>
-                            </div>
-                            <div class="col-xs-9 title">
-                              <a class="title-link" href="{{$article->path()}}">
-                               {{$article->title}}
-                             </a>
-                             <a class="description-link">
-                              @php
-                              echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
-                              @endphp
+                      -->
+                      <li class="list-group-item active">新着記事</li>
+                      @foreach(\App\Article::latest()->take(20)->get() as $article)
+                      <li class="list-group-item">
+                        <div class="padding-wrap">
+                          <div class="col-xs-3 thumbnail">
+                            <a class="thumbnail-link" href="{{$article->path()}}">
+                              <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
                             </a>
                           </div>
-                          <div class="clear"></div>
-                          <div class="col-xs-12 cat">
-                            <span class="cat-item">
-                              {{$article->word->text}}
-                            </span>
-                            <span class="cat-domain">
-                              @php
-                              echo parse_url($article->url, PHP_URL_HOST);
-                              @endphp
-                            </span>
-                            <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
-                          </div>
-                          <span class="view">{{$article->view}} view</span>
+                          <div class="col-xs-9 title">
+                            <a class="title-link" href="{{$article->path()}}">
+                             {{$article->title}}
+                           </a>
+                           <a class="description-link">
+                            @php
+                            echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
+                            @endphp
+                          </a>
                         </div>
-                      </li>
-                      @endforeach
-                    </ul>
+                        <div class="clear"></div>
+                        <div class="col-xs-12 cat">
+                          <span class="cat-item">
+                            {{$article->word->text}}
+                          </span>
+                          <span class="cat-domain">
+                            @php
+                            echo parse_url($article->url, PHP_URL_HOST);
+                            @endphp
+                          </span>
+                          <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+                        </div>
+                        <span class="view">{{$article->view}} view</span>
+                      </div>
+                    </li>
+                    @endforeach
+                  </ul>
 
                     <!-- <center>
                      <a href="https://px.a8.net/svt/ejp?a8mat=2TCFED+6WVAQA+50+2HX3HT" target="_blank" rel="nofollow">
                       <img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=170221045418&wid=005&eno=01&mid=s00000000018015103000&mc=1"></a>
                       <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2TCFED+6WVAQA+50+2HX3HT" alt="">
                     </center>
- -->
+                  -->
 
-                    <ul class="list-group">
-                      <li class="list-group-item active">タグ</li>
-                    </ul>
-                    <div id="tag-area">
-                      @foreach(\App\Word::inRandomOrder()->get() as $word)
-                      @php
-                      $font = (100 + rand(1,60)) / 10;
-                      $opacity = $font / 16;
-                      @endphp
-                      <a class="tag" href="{{$word->path()}}" style="font-size:{{$font}}px;opacity:{{$opacity}}">{{$word->text}}</a>
-                      @endforeach
-                    </div>
+                  <ul class="list-group">
+                    <li class="list-group-item active">タグ</li>
+                  </ul>
+                  <div id="tag-area">
+                    @foreach(\App\Word::inRandomOrder()->get() as $word)
+                    @php
+                    $font = (100 + rand(1,60)) / 10;
+                    $opacity = $font / 16;
+                    @endphp
+                    <a class="tag" href="{{$word->path()}}" style="font-size:{{$font}}px;opacity:{{$opacity}}">{{$word->text}}</a>
+                    @endforeach
+                  </div>
 
                    <!--  <div class="block">
                       <center>

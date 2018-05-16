@@ -4,7 +4,7 @@ for filename in `find antena_* -maxdepth 0 -type d`
 
 do
 cd $filename
-/usr/bin/php7.1 artisan schedule:run
+nohup /usr/bin/php7.1 artisan schedule:run &
 cd ..
 done
 
