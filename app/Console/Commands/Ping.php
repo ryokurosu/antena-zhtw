@@ -46,7 +46,7 @@ class Ping extends Command
 
         $urls = [url('/sitemap.xml')];
 
-        $article_volume = ceil(\App\Article::count() / 10000);
+        $article_volume = ceil(\App\Article::count() / 20000);
 
         for ($i=1; $i <= $article_volume; $i++) { 
             $urls[] = url('/'.$i.'/sitemap.xml');
