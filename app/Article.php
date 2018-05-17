@@ -55,7 +55,7 @@ class Article extends Model implements Feedable
 	}
 	public static function getFeedItems()
 	{
-		return Article::all();
+		return Article::orderBy('updated_at','desc')->take(5000)->get();
 	}
 
 }
