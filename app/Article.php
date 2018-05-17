@@ -46,7 +46,7 @@ class Article extends Model implements Feedable
 	public function toFeedItem()
 	{
 		return FeedItem::create()
-		->id($this->id)
+		->id('article/' . $this->id)
 		->title($this->title)
 		->summary($this->formatRSS($this->description))
 		->updated($this->updated_at)

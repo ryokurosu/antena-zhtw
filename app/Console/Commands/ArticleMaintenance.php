@@ -103,40 +103,40 @@ class ArticleMaintenance extends Command
     // });
     //   noticeDiscord('article:maintenance');
     //   
-        $article = \App\Article::orderBy('created_at','desc')->take(3000);
-        $files = \File::files(public_path('images/'));
-        $output = "";
-        $delete_list = [];
-        foreach($files as $f){
-          if(!$article->where('thumbnail',$f->getFilename())->first()){
-            \File::delete($f);
-            if (!\File::exists($f)) {
-              $output .= $f->getFilename()."は削除しました".PHP_EOL;
-              $delete_list[] = $f->getFilename();
-              sleep(1);
-            }
-          }
-        }
-        noticeDiscord($output);
+        // $article = \App\Article::orderBy('created_at','desc')->take(3000);
+        // $files = \File::files(public_path('images/'));
+        // $output = "";
+        // $delete_list = [];
+        // foreach($files as $f){
+        //   if(!$article->where('thumbnail',$f->getFilename())->first()){
+        //     \File::delete($f);
+        //     if (!\File::exists($f)) {
+        //       $output .= $f->getFilename()."は削除しました".PHP_EOL;
+        //       $delete_list[] = $f->getFilename();
+        //       sleep(1);
+        //     }
+        //   }
+        // }
+        // noticeDiscord($output);
 
-        $files = \File::files(public_path('thumbnail/'));
-        $output = "";
-        foreach($files as $f){
-          if(in_array($f->getFilename(),$delete_list)){
-            \File::delete($f);
-            if (!\File::exists($f)) {
-              sleep(1);
-            }
-          }
-        }
-        foreach(\App\Article::orderBy('created_at','desc')->take(3000)->cursor() as $a){
-            $thumbnail = $a->thumbnail;
-            if(\File::exists(public_patH('images/'.$thumbnail))){
-                echo "true";
-            }else{
-              $a->fill(['thumbnail' => 'noimage.jpg'])->save();
-              echo "|";
-            }
-        }
+        // $files = \File::files(public_path('thumbnail/'));
+        // $output = "";
+        // foreach($files as $f){
+        //   if(in_array($f->getFilename(),$delete_list)){
+        //     \File::delete($f);
+        //     if (!\File::exists($f)) {
+        //       sleep(1);
+        //     }
+        //   }
+        // }
+        // foreach(\App\Article::orderBy('created_at','desc')->take(3000)->cursor() as $a){
+        //     $thumbnail = $a->thumbnail;
+        //     if(\File::exists(public_patH('images/'.$thumbnail))){
+        //         echo "true";
+        //     }else{
+        //       $a->fill(['thumbnail' => 'noimage.jpg'])->save();
+        //       echo "|";
+        //     }
+        // }
       }
     }

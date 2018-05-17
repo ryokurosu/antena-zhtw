@@ -64,6 +64,7 @@ class Ping extends Command
         }
 
         $url_string = implode(PHP_EOL,$urls);
+
         noticeDiscord("Ping send.".PHP_EOL."{$url_string}");
 
         //フィードのURL
