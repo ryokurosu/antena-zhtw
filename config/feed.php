@@ -16,7 +16,7 @@ return [
              */
             'url' => '/feed',
 
-            'title' => 'All articles on this site.',
+            'title' => 'All articles on ' . env('APP_URL'),
         ],
     ],
 
