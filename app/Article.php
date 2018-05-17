@@ -60,8 +60,12 @@ class Article extends Model implements Feedable
 
 	public function fix_latin1_mangled_with_utf8_maybe_hopefully_most_of_the_time($str)
 	{
-		return preg_replace('#[\\xA1-\\xFF](?![\\x80-\\xBF]{2,})#', function($m){
-			return utf8_encode($m[0]);
-		}, $str);
+		return preg_replace_callback('#[\\xA1-\\xFF](?![\\x80-\\xBF]{2,})#', 'utf8_encode_callback', $str);
 	}
+
+	public function utf8_encode_callback($m)
+	{
+		return utf8_encode($m[0]);
+	}
+
 }
