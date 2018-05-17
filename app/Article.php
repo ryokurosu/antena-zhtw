@@ -47,8 +47,8 @@ class Article extends Model implements Feedable
 	{
 		return FeedItem::create()
 		->id($this->id)
-		->title($this->feedFormat($this->title))
-		->summary($this->feedFormat($this->description))
+		->title($this->title)
+		->summary($this->description)
 		->updated($this->updated_at)
 		->link($this->path())
 		->author(\Config::get('app.name'));
@@ -56,11 +56,5 @@ class Article extends Model implements Feedable
 	public static function getFeedItems()
 	{
 		return Article::all();
-	}
-
-	public function feedFormat($str)
-	{
-		$str = preg_replace( '/^_+/', '', $str );
-		return (str_replace("\x0B", "", $str));
 	}
 }

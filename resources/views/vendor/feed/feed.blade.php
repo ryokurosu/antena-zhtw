@@ -21,7 +21,7 @@
                 <name> <![CDATA[{{ $item->author }}]]></name>
             </author>
             <summary type="html">
-                <![CDATA[{!! $item->summary !!}]]>
+                <![CDATA[{{ $item->summary }}]]>
             </summary>
             <updated>{{ $item->updated->toAtomString() }}</updated>
         </entry>
