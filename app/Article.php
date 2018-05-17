@@ -48,18 +48,16 @@ class Article extends Model implements Feedable
 		return FeedItem::create()
 		->id($this->id)
 		->title($this->title)
-		->summary(htmlspecialchars($this->description))
+		->summary($this->formatRSS($this->description))
 		->updated($this->updated_at)
 		->link($this->path())
 		->author(\Config::get('app.name'));
 	}
 	public static function getFeedItems()
 	{
-		return Article::all();
+		return Article::orderBy('updated_at','desc')->take(10000)->get();
 	}
-
-	public function formatRSS($str){
-		$array = array('\x1c','\xE6','\x1d','\xac','\xa1');
-		return str_replace($array,'',$str);
+	public function formatRSS($text){
+		 return preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S', '', $text);
 	}
 }

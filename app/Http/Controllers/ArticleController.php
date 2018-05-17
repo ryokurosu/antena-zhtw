@@ -45,6 +45,11 @@ class ArticleController extends Controller
         $article = Article::with('twitters')->findOrFail($id);
         $article->increment('view',rand(1,3));
         $word = $article->word;
+
+        /* 一時的 */
+        $article->description = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S', '', $article->description);
+        $article->save();
+
         $articles = Article::where('word_id',$word->id)->take(40)->get();
         return view('page',[
             'detail' => $article,

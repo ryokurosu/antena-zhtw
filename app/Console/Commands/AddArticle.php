@@ -137,6 +137,8 @@ class AddArticle extends Command
       $imageName = 'noimage.jpg';
     }
 
+    $description = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S', '', $description);
+
     $article->fill([
       'word_id' => $word->id,
       'url' => $url,
