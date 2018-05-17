@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Article extends Model
+class Article extends Model implements Feedable
 {
 	protected $fillable = [
 		'word_id', 'title', 'url', 'thumbnail' ,'view','description'
@@ -40,4 +42,20 @@ class Article extends Model
 	public function twitters(){
 		return $this->hasMany('App\Twitter');
 	}
+
+	public function toFeedItem()
+	{
+		return FeedItem::create()
+		->id($this->id)
+		->title($this->title)
+		->summary($this->description)
+		->updated($this->updated_at)
+		->link($this->path())
+		->author(\Config::get('app.name'));
+	}
+	public static function getFeedItems()
+	{
+		return Article::all();
+	}
+
 }

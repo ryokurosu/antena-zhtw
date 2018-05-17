@@ -46,6 +46,7 @@
     <link rel="shortcut icon" href="{{url('/favicon.ico')}}">
     <link rel="apple-touch-icon-precomposed" href="{{url('/favicon.ico')}}">
     <link rel="canonical" href="{{url()->current()}}">
+    <link rel="alternate" type="application/atom+xml" title="News" href="{{url('/feed')}}">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{env('GA_TAG')}}"></script>

@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sitemap.xml','SitemapController@index');
 Route::get('/{id}/sitemap.xml','SitemapController@article');
+Route::feeds();

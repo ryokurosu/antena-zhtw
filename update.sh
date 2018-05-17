@@ -10,5 +10,6 @@ git pull git://github.com/ryokurosu/antena.git
 git submodule update --init --recursive
 git stash clear
 php artisan config:clear 
+composer update
 cd ..
 done
