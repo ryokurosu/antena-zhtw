@@ -47,15 +47,25 @@ class Article extends Model implements Feedable
 	{
 		return FeedItem::create()
 		->id($this->id)
-		->title($this->title)
-		->summary($this->description)
+		->title($this->utf8_encode_callback($this->title))
+		->summary($this->utf8_encode_callback($this->description))
 		->updated($this->updated_at)
 		->link($this->path())
 		->author(\Config::get('app.name'));
 	}
 	public static function getFeedItems()
 	{
-		return Article::orderBy('updated_at','desc')->take(5000)->get();
+		return Article::all();
+	}
+
+	public function fix_latin1_mangled_with_utf8_maybe_hopefully_most_of_the_time($str)
+	{
+		return preg_replace_callback('#[\\xA1-\\xFF](?![\\x80-\\xBF]{2,})#', 'utf8_encode_callback', $str);
+	}
+
+	public function utf8_encode_callback($m)
+	{
+		return utf8_encode($m[0]);
 	}
 
 }
