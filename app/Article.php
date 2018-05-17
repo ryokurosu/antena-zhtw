@@ -47,8 +47,8 @@ class Article extends Model implements Feedable
 	{
 		return FeedItem::create()
 		->id($this->id)
-		->title($this->utf8_encode_callback($this->title))
-		->summary($this->utf8_encode_callback($this->description))
+		->title($this->fix_latin1_mangled_with_utf8_maybe_hopefully_most_of_the_time($this->title))
+		->summary($this->fix_latin1_mangled_with_utf8_maybe_hopefully_most_of_the_time($this->description))
 		->updated($this->updated_at)
 		->link($this->path())
 		->author(\Config::get('app.name'));
@@ -60,12 +60,8 @@ class Article extends Model implements Feedable
 
 	public function fix_latin1_mangled_with_utf8_maybe_hopefully_most_of_the_time($str)
 	{
-		return preg_replace_callback('#[\\xA1-\\xFF](?![\\x80-\\xBF]{2,})#', 'utf8_encode_callback', $str);
+		return preg_replace('#[\\xA1-\\xFF](?![\\x80-\\xBF]{2,})#', function($m){
+			return utf8_encode($m[0]);
+		}, $str);
 	}
-
-	public function utf8_encode_callback($m)
-	{
-		return utf8_encode($m[0]);
-	}
-
 }
