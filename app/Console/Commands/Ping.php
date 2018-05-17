@@ -69,7 +69,7 @@ class Ping extends Command
 
         //フィードのURL
         $url = url('/feed');
-        if (RequestHub($url)) {
+        if ($this->RequestHub($url)) {
             noticeDiscord("Feed {$url} リクエスト処理しました");
         } else {
             noticeDiscord("Feed {$url} リクエスト処理出来ませんでした");
