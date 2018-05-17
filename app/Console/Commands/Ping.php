@@ -65,5 +65,40 @@ class Ping extends Command
 
         $url_string = implode(PHP_EOL,$urls);
         noticeDiscord("Ping send.".PHP_EOL."{$url_string}");
+
+        //フィードのURL
+        $url = url('/feed');
+        if (RequestHub($url)) {
+            noticeDiscord("Feed {$url} リクエスト処理しました");
+        } else {
+            noticeDiscord("Feed {$url} リクエスト処理出来ませんでした");
+        }
+
+    }
+
+    public function RequestHub($feed){
+    //GooleのHubサーバー
+        $url = 'http://pubsubhubbub.appspot.com/';
+    //postデータ　hub.urlは"フィードのURL"
+        $post = array(
+          'hub.mode' => 'publish',
+          'hub.url' => $feed,
+      );
+        $ch = curl_init();
+    //curlを使用してPOST送信
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+    //リクエスト実行
+        $response = curl_exec($ch);
+    //戻り値を取得
+        $chinfo = curl_getinfo($ch);
+        echo "ステータスコード : ".$chinfo['http_code']."<br />";
+    //戻り値のHTTPコードが"204"だったらtrue
+        $res = (204 == $chinfo['http_code']);
+        curl_close($ch);
+        return $res;
     }
 }
