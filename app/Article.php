@@ -57,4 +57,9 @@ class Article extends Model implements Feedable
 	{
 		return Article::all();
 	}
+
+	public function formatRSS($str){
+		$array = array('\x1c','\xE6','\x1d','\xac','\xa1');
+		return str_replace($array,'',$str);
+	}
 }
