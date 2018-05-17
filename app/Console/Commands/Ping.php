@@ -96,7 +96,7 @@ class Ping extends Command
         $response = curl_exec($ch);
     //戻り値を取得
         $chinfo = curl_getinfo($ch);
-        echo "ステータスコード : ".$chinfo['http_code']."<br />";
+        // echo "ステータスコード : ".$chinfo['http_code']."<br />";
     //戻り値のHTTPコードが"204"だったらtrue
         $res = (204 == $chinfo['http_code']);
         curl_close($ch);

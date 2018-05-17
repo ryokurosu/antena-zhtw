@@ -55,7 +55,7 @@ class Article extends Model implements Feedable
 	}
 	public static function getFeedItems()
 	{
-		return Article::orderBy('updated_at','desc')->take(10000)->get();
+		return Article::orderBy('updated_at','desc')->take(20000)->get();
 	}
 	public function formatRSS($text){
 		 return preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S', '', $text);
