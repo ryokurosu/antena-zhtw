@@ -48,8 +48,8 @@ class Article extends Model implements Feedable
 		return FeedItem::create()
 		->id($this->id)
 		->title($this->title)
-		->summary($this->description)
-		->updated($this->updated_at)
+		->summary($this->formatRSS($this->description))
+		->updated($this->formatRSS($this->updated_at))
 		->link($this->path())
 		->author(\Config::get('app.name'));
 	}
