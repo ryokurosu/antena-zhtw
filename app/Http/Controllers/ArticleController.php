@@ -25,7 +25,7 @@ class ArticleController extends Controller
      */
     public function index($id = null)
     {
-        $articles = Article::latest()->with('word')->paginate(52);
+        $articles = Article::latest()->with('word')->paginate(26);
         if($id){
             $detail = Article::findOrFail($id);
             return view('article',[
@@ -46,7 +46,7 @@ class ArticleController extends Controller
         $article->increment('view',rand(1,3));
         $word = $article->word;
 
-        $articles = Article::where('word_id',$word->id)->take(40)->get();
+        $articles = Article::where('word_id',$word->id)->take(20)->cursor();
         return view('page',[
             'detail' => $article,
             'articles' => $articles
@@ -55,7 +55,7 @@ class ArticleController extends Controller
 
     public function word($id){
         $word = Word::findOrFail($id);
-        $articles = Article::where('word_id',$word->id)->latest()->with('word')->paginate(52);
+        $articles = Article::where('word_id',$word->id)->latest()->with('word')->paginate(26);
         return view('article',[
             'articles' => $articles,
             'word' => $word

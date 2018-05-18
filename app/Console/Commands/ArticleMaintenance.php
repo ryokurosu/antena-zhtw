@@ -129,13 +129,13 @@ class ArticleMaintenance extends Command
         //     }
         //   }
         // }
-        foreach(\App\Article::whereNotIn('thumbnail','noimage.jpg')->inRandomOrder()->take(50000)->cursor() as $a){
+        foreach(Article::cursor() as $a){
             $thumbnail = $a->thumbnail;
             if(\File::exists(public_path('images/'.$thumbnail))){
-                echo "true";
+                // echo "true";
             }else{
               $a->fill(['thumbnail' => 'noimage.jpg'])->save();
-              echo "|";
+              // echo "|";
             }
         }
       }

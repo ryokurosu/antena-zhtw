@@ -147,7 +147,7 @@
                         </div> -->
                         <ul class="list-group">
                           <li class="list-group-item active">人気記事</li>
-                          @foreach(\App\Article::popular()->take(20)->get() as $article)
+                          @foreach(\App\Article::popular()->take(10)->cursor() as $article)
                           @if($loop->iteration == 1)
                           <li class="list-group-item">
                            <div class="padding-wrap">
@@ -235,7 +235,7 @@
                         </div>
                       -->
                       <li class="list-group-item active">新着記事</li>
-                      @foreach(\App\Article::latest()->take(20)->get() as $article)
+                      @foreach(\App\Article::latest()->take(10)->cursor() as $article)
                       <li class="list-group-item" itemscope itemtype="http://schema.org/Article">
                         <div class="padding-wrap">
                           <div class="col-xs-3 thumbnail">
