@@ -46,6 +46,7 @@
     <link rel="shortcut icon" href="{{url('/favicon.ico')}}">
     <link rel="apple-touch-icon-precomposed" href="{{url('/favicon.ico')}}">
     <link rel="canonical" href="{{url()->current()}}">
+    <link rel="alternate" hreflang="ja" href="{{url()->current()}}>
     <link rel="alternate" type="application/atom+xml" title="News" href="{{url('/feed')}}">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -125,6 +126,7 @@
                 </div>
               </nav>
               <div class="container">
+                @yield('breadcrumbs')
                 <div class="row">
                   <div class="col-xs-12 col-md-6">
                     @yield('content')
@@ -151,7 +153,7 @@
                            <div class="padding-wrap">
                             <div class="col-xs-3 thumbnail">
                               <a class="thumbnail-link" href="https://lim-jp.com/archives/449">
-                                <img src="http://top.tsite.jp/static/top/sys/contents_image/036/631/669/36631669_107803.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
+                                <img src="https://top.tsite.jp/static/top/sys/contents_image/036/631/669/36631669_107803.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
                               </a>
                             </div>
                             <div class="col-xs-9 title">
@@ -180,7 +182,7 @@
                         </div>
                       </li>
                       @endif
-                                            <li class="list-group-item">
+                      <li class="list-group-item"  itemscope itemtype="http://schema.org/Article">
                        <div class="padding-wrap">
                         <div class="col-xs-3 thumbnail">
                           <a class="thumbnail-link" href="{{$article->path()}}">
@@ -188,7 +190,7 @@
                           </a>
                         </div>
                         <div class="col-xs-9 title">
-                          <a class="title-link" href="{{$article->path()}}">
+                          <a class="title-link" href="{{$article->path()}}" itemprop="name">
                            {{$article->title}}
                          </a>
                          <a class="description-link">
@@ -202,7 +204,7 @@
                         <span class="cat-item">
                           {{$article->word->text}}
                         </span>
-                        <span class="cat-domain">
+                        <span class="cat-domain" itemprop="author">
                           @php
                           echo parse_url($article->url, PHP_URL_HOST);
                           @endphp
@@ -234,7 +236,7 @@
                       -->
                       <li class="list-group-item active">新着記事</li>
                       @foreach(\App\Article::latest()->take(20)->get() as $article)
-                      <li class="list-group-item">
+                      <li class="list-group-item" itemscope itemtype="http://schema.org/Article">
                         <div class="padding-wrap">
                           <div class="col-xs-3 thumbnail">
                             <a class="thumbnail-link" href="{{$article->path()}}">
@@ -242,7 +244,7 @@
                             </a>
                           </div>
                           <div class="col-xs-9 title">
-                            <a class="title-link" href="{{$article->path()}}">
+                            <a class="title-link" href="{{$article->path()}}" itemprop="name">
                              {{$article->title}}
                            </a>
                            <a class="description-link">
@@ -256,7 +258,7 @@
                           <span class="cat-item">
                             {{$article->word->text}}
                           </span>
-                          <span class="cat-domain">
+                          <span class="cat-domain" itemprop="author">
                             @php
                             echo parse_url($article->url, PHP_URL_HOST);
                             @endphp
@@ -299,7 +301,7 @@
 
                   </div>
                 </div>
-
+                @yield('breadcrumbs')
                 <footer>
                   <p style="margin:0;padding:16px 0;color:#aaa;text-align:right;font-size:.8rem;">© 2018 {{config('app.name')}}</p>
                 </footer>

@@ -1,15 +1,25 @@
 @extends('layouts.app')
 @include('layouts.defaultpart')
 
+@section('breadcrumbs')
+{{ Breadcrumbs::render('home') }}
+@stop
+
 @isset($detail)
 @section('title',$detail->title)
 @section('description',$detail->description)
 @section('image',$detail->imagePath())
+@section('breadcrumbs')
+{{ Breadcrumbs::render('list',$detail) }}
+@overwrite
 @endisset
 
 @isset($word)
 @section('title',$word->text.'に関する記事一覧')
 @section('description',$word->text.'に関する記事一覧')
+@section('breadcrumbs')
+{{ Breadcrumbs::render('word',$word) }}
+@overwrite
 @endisset
 
 @section('content')
@@ -19,7 +29,7 @@
   @endif
   <ul class="list-group">
     @foreach($articles as $article)
-    <li class="list-group-item">
+    <li class="list-group-item" itemscope itemtype="http://schema.org/Article">
       <div class="padding-wrap">
         <div class="col-xs-3 thumbnail">
           <a class="thumbnail-link" href="{{$article->path()}}">
@@ -27,7 +37,7 @@
           </a>
         </div>
         <div class="col-xs-9 title">
-          <a class="title-link" href="{{$article->path()}}">
+          <a class="title-link" href="{{$article->path()}}" itemprop="name">
            {{$article->title}}
          </a>
          <a class="description-link">
@@ -41,7 +51,7 @@
         <span class="cat-item">
           {{$article->word->text}}
         </span>
-        <span class="cat-domain">
+        <span class="cat-domain" itemprop="author">
           @php
           echo parse_url($article->url, PHP_URL_HOST);
           @endphp

@@ -4,13 +4,15 @@
 @section('title',$detail->title)
 @section('description',$detail->description)
 @section('image',$detail->imagePath())
-
+@section('breadcrumbs')
+{{ Breadcrumbs::render('page',$detail) }}
+@stop
 
 
 
 @section('content')
-<div class="panel panel-default">
-  <div class="panel-heading"><h1>{{$detail->title}}</h1></div>
+<div class="panel panel-default" itemscope itemtype="http://schema.org/Article">
+  <div class="panel-heading"><h1 itemprop="name">{{$detail->title}}</h1></div>
   <div class="panel-body">
     <div class="thumbnail-wrap">
       <img src="{{$detail->imagePath()}}" alt="{{$detail->title}}">
@@ -126,7 +128,7 @@
                            <div class="padding-wrap">
                             <div class="col-xs-3 thumbnail">
                               <a class="thumbnail-link" href="https://lim-jp.com/archives/449">
-                                <img src="http://top.tsite.jp/static/top/sys/contents_image/036/631/669/36631669_107803.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
+                                <img src="https://top.tsite.jp/static/top/sys/contents_image/036/631/669/36631669_107803.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
                               </a>
                             </div>
                             <div class="col-xs-9 title">

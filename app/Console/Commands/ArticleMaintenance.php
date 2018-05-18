@@ -129,14 +129,14 @@ class ArticleMaintenance extends Command
         //     }
         //   }
         // }
-        // foreach(\App\Article::orderBy('created_at','desc')->take(3000)->cursor() as $a){
-        //     $thumbnail = $a->thumbnail;
-        //     if(\File::exists(public_patH('images/'.$thumbnail))){
-        //         echo "true";
-        //     }else{
-        //       $a->fill(['thumbnail' => 'noimage.jpg'])->save();
-        //       echo "|";
-        //     }
-        // }
+        foreach(\App\Article::whereNotIn('thumbnail','noimage.jpg')->inRandomOrder()->take(50000)->cursor() as $a){
+            $thumbnail = $a->thumbnail;
+            if(\File::exists(public_path('images/'.$thumbnail))){
+                echo "true";
+            }else{
+              $a->fill(['thumbnail' => 'noimage.jpg'])->save();
+              echo "|";
+            }
+        }
       }
     }
