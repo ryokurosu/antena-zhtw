@@ -104,23 +104,8 @@
                 <div id="fb-root"></div>
               </div>
               <div class="meta-wrap block">
-                <!-- p><center>
-                  <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C7E0B6+50+5MGG9D" target="_blank" rel="nofollow">
-                    <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=180507837738&wid=005&eno=01&mid=s00000000018034005000&mc=1"></a>
-                    <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZGWQL+C7E0B6+50+5MGG9D" alt="">
-                  </center></p> -->
                   <p><center><a href="{{$detail->url}}" class="btn btn-primary" rel="nofollow" target="_blank">記事を読む</a></center></p>
-                  <!-- <p><center><a href="https://px.a8.net/svt/ejp?a8mat=2ZF26E+E4GAHE+348+1TQ1GY" target="_blank" rel="nofollow">飲食店、美容院のホームページ作るならグーペで決まり！</a>
-                    <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=2ZF26E+E4GAHE+348+1TQ1GY" alt=""></center></p> -->
-                  </div>
-                 <!--  <div class="block">
-                    <center>
-                     <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C6SKPE+3GRY+HWXLD" target="_blank" rel="nofollow">
-                      <img border="0" width="728" height="90" alt="" src="https://www26.a8.net/svt/bgt?aid=180507837737&wid=005&eno=01&mid=s00000016171003009000&mc=1"></a>
-                      <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=2ZGWQL+C6SKPE+3GRY+HWXLD" alt="">
-                    </center>
-                  </div> -->
-
+               </div>
                   <ul class="list-group noback">
                     @foreach($articles as $article)
                     @if($loop->iteration == 1)
@@ -161,7 +146,7 @@
                       <div class="padding-wrap">
                         <div class="col-xs-3 thumbnail">
                           <a class="thumbnail-link" href="{{$article->path()}}">
-                            <img src="{{$article->imagePath()}}" alt="{{$article->title}}">
+                            <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
                           </a>
                         </div>
                         <div class="col-xs-9 title">
