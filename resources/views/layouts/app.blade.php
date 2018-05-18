@@ -282,12 +282,8 @@
                     <li class="list-group-item active">タグ</li>
                   </ul>
                   <div id="tag-area">
-                    @foreach(\App\Word::inRandomOrder()->get() as $word)
-                    @php
-                    $font = (100 + rand(1,60)) / 10;
-                    $opacity = $font / 16;
-                    @endphp
-                    <a class="tag" href="{{$word->path()}}" style="font-size:{{$font}}px;opacity:{{$opacity}}">{{$word->text}}</a>
+                    @foreach(\App\Word::inRandomOrder()->take(200)->cursor() as $word)
+                    <a class="tag" href="{{$word->path()}}">{{$word->text}}</a>
                     @endforeach
                   </div>
 
