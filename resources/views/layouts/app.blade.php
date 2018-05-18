@@ -1,9 +1,9 @@
 @if(url()->full() == url('/'))
 @section('title',config('app.name'))
-@section('description'){{config('app.name')}}では @php echo \App\Word::where('id','>',0)->get()->implode('text',','); @endphp についての情報がまとめられてます。@stop
+@section('description'){{config('app.name')}}では @php echo \App\Word::where('id','>',0)->take(20)->get()->implode('text',','); @endphp についての情報がまとめられてます。@stop
 @else
 @section('title')-{{config('app.name')}}@append
-@section('description')。{{config('app.name')}}では @php echo \App\Word::where('id','>',0)->get()->implode('text',','); @endphp についての情報がまとめられてます。@append
+@section('description')。{{config('app.name')}}では @php echo \App\Word::where('id','>',0)->take(20)->get()->implode('text',','); @endphp についての情報がまとめられてます。@append
 @endif
 
 
@@ -39,15 +39,16 @@
     <meta property="og:locale" content="ja_JP">
     <meta property="fb:app_id" content="339751459830292">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:domain" content="{{config('app.domain')}}">
     <meta property="og:image" content="@yield('image',url('/thumbnail.jpg'))">
     <meta name="twitter:url" content="{{url()->current()}}">
     <meta name="twitter:image" content="@yield('image',url('/thumbnail.jpg'))">
-    <link rel="shortcut icon" href="{{url('/favicon.ico')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{url('/favicon.ico')}}">
     <link rel="canonical" href="{{url()->current()}}">
-    <link rel="alternate" hreflang="ja" href="{{url()->current()}}>
+    <link rel="alternate" hreflang="ja" href="{{url()->current()}}">
     <link rel="alternate" type="application/atom+xml" title="News" href="{{url('/feed')}}">
+
+    <link rel="icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="url('apple-touch-icon.png')}}" sizes="180x180">
+    <link rel="icon" href="{{url('/favicon.png')}}" sizes="192x192">　
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{env('GA_TAG')}}"></script>
