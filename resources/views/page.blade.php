@@ -29,6 +29,7 @@
       <p>{{$detail->description}}</p>
     </div>
     <div class="link-wrap">
+      <p style="text-align:center;">スポンサーリンク</p>
       @yield('link-ad')
     </div>
    <!--  <div class="block">
