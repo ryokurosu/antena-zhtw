@@ -104,7 +104,7 @@
                 <div id="fb-root"></div>
               </div>
               <div class="meta-wrap block">
-                <<!-- p><center>
+                <!-- p><center>
                   <a href="https://px.a8.net/svt/ejp?a8mat=2ZGWQL+C7E0B6+50+5MGG9D" target="_blank" rel="nofollow">
                     <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=180507837738&wid=005&eno=01&mid=s00000000018034005000&mc=1"></a>
                     <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2ZGWQL+C7E0B6+50+5MGG9D" alt="">
