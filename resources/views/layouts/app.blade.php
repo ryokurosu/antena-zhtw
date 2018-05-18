@@ -47,8 +47,9 @@
     <link rel="alternate" type="application/atom+xml" title="News" href="{{url('/feed')}}">
 
     <link rel="icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="url('apple-touch-icon.png')}}" sizes="180x180">
-    <link rel="icon" href="{{url('/favicon.png')}}" sizes="192x192">　
+    <link rel="apple-touch-icon" href="{{url('/apple-touch-icon.png')}}" sizes="180x180">
+    <link rel="icon" href="{{url('/favicon.png')}}" sizes="192x192">
+    <meta name="theme-color" content="#166fff">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{env('GA_TAG')}}"></script>
