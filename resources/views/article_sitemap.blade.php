@@ -6,7 +6,7 @@
         <lastmod>{{ $v->updated_at->format('Y-m-d') }}</lastmod>
         <image:image>
         <image:loc>{{ $v->imagePath() }}</image:loc>
-        <image:title>{{ $v->title }}</image:title>
+        <image:title>{{ html_entity_decode($v->title) }}</image:title>
     </image:image>
 </url>
 <url>
