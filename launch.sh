@@ -3,6 +3,8 @@ read PROJECTNAME
 git clone git://github.com/ryokurosu/public.git $PROJECTNAME
 git clone git://github.com/ryokurosu/antena-zhtw.git antena_$PROJECTNAME
 cd $PROJECTNAME
+git submodule init
+git submodule update -f
 mv index.php.template index.php
 sed -i -e "s/..\/vendor/..\/antena_$PROJECTNAME\/vendor/g" ./index.php
 sed -i -e "s/..\/bootstrap/..\/antena_$PROJECTNAME\/bootstrap/g" ./index.php
