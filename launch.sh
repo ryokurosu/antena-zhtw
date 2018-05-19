@@ -29,4 +29,5 @@ echo "ワードを設定してください。"
 read WORD
 php artisan add:word $WORD true
 nohup php artisan add:article &
-
+cd -
+mv antena_$PROJECTNAME/schedule.sh schedule.sh
