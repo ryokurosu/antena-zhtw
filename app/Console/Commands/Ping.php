@@ -55,9 +55,7 @@ class Ping extends Command
         curl_close($curl);
       }
 
-      $url_string = implode(PHP_EOL,$urls);
-
-      noticeDiscord("Ping send.".PHP_EOL."{$url_string}");
+      noticeDiscord("Ping send.".PHP_EOL."{$url}");
 
         //フィードのURL
       $url = url('/feed');
