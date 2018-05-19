@@ -12,6 +12,7 @@ nohup /usr/bin/php7.1 artisan schedule:run &
 filepublic=${filename:7}
 str="${str}Sitemap: https://${domain}/${filepublic}/sitemap.xml\n"
 cd ..
+mv $filename/update.sh update.sh
 done
 
 echo -e $str >> robots.txt

@@ -13,6 +13,7 @@ php artisan config:clear
 composer update
 filepublic=${filename:7}
 cd -
+mv $filename/schedule.sh schedule.sh
 cd $filepublic
 echo $filepublic
 git init
