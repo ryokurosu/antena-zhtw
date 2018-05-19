@@ -1,15 +1,11 @@
 <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    <url>
-        <loc>{{ url('/') }}</loc>
-        <lastmod>2018-01-20</lastmod>
-    </url>
-    @foreach($words as $v)
-    <url>
-        <loc>{{ url('/word/'.$v->id) }}</loc>
-        <lastmod>{{ $v->updated_at->format('Y-m-d')}}</lastmod>
-    </url>
-    @endforeach
-</urlset>
-
-
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ @php
+ $article_volume = ceil(\App\Article::count() / 20000);
+ @endphp
+ @for($i=0; $i <= $article_volume; $i++)
+ <sitemap>
+  <loc>{{url('/'.$i.'/sitemap.xml')}}</loc>
+</sitemap>
+@endfor
+</sitemapindex>
