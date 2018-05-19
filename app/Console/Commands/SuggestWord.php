@@ -63,6 +63,7 @@ class SuggestWord extends Command
                   $wordlist .= $w . PHP_EOL;
                 }
               }catch(Exception $e){
+                echo $e->getMessage();
                 continue;
               }
             }
