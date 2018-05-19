@@ -1,7 +1,7 @@
 echo "プロジェクト名を記入"
 read PROJECTNAME
 git clone git://github.com/ryokurosu/public.git $PROJECTNAME
-git clone git://github.com/ryokurosu/antena.git antena_$PROJECTNAME
+git clone git://github.com/ryokurosu/antena-zhtw.git antena_$PROJECTNAME
 cd $PROJECTNAME
 mv index.php.template index.php
 sed -i -e "s/..\/vendor/..\/antena_$PROJECTNAME\/vendor/g" ./index.php
