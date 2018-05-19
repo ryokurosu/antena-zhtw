@@ -15,8 +15,8 @@
 @endisset
 
 @isset($word)
-@section('title',$word->text.'に関する記事一覧')
-@section('description',$word->text.'に関する記事一覧')
+@section('title',$word->text.'文章列表')
+@section('description',$word->text.'文章列表')
 @section('breadcrumbs')
 {{ Breadcrumbs::render('word',$word) }}
 @overwrite
@@ -56,7 +56,7 @@
           echo parse_url($article->url, PHP_URL_HOST);
           @endphp
         </span>
-        <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+        <a href="{{$article->path()}}" class="link-btn">詳細</a>
       </div>
       <span class="view">{{$article->view}} view</span>
     </div>

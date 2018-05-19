@@ -67,7 +67,7 @@ class AddArticle extends Command
           });
         } catch (Exception $e) {
           $reader->delete();
-          if(\Config::get('app.name') == 'シャドウバースまとめ'){
+          if(\Config::get('app.name') == '日本動畫概要'){
             try{
               \Artisan::call('delete:reader',['rss' => $reader->url]);
             }catch(Exception $e){

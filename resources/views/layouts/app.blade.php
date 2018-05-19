@@ -1,9 +1,9 @@
 @if(url()->full() == url('/'))
 @section('title',config('app.name'))
-@section('description'){{config('app.name')}}では @php echo \App\Word::where('id','>',0)->take(20)->get()->implode('text',','); @endphp についての情報がまとめられてます。@stop
+@section('description'){{config('app.name')}}，總結了關於@php echo \App\Word::where('id','>',0)->take(20)->get()->implode('text',','); @endphp的信息@stop
 @else
 @section('title')-{{config('app.name')}}@append
-@section('description')。{{config('app.name')}}では @php echo \App\Word::where('id','>',0)->take(20)->get()->implode('text',','); @endphp についての情報がまとめられてます。@append
+@section('description')。{{config('app.name')}}，總結了關於@php echo \App\Word::where('id','>',0)->take(20)->get()->implode('text',','); @endphp的信息@append
 @endif
 
 
@@ -36,14 +36,13 @@
     <meta property="og:url" content="{{url()->current()}}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{config('app.name', 'Laravel')}}">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="fb:app_id" content="339751459830292">
+    <meta property="og:locale" content="zh-tw">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="@yield('image',url('/thumbnail.jpg'))">
     <meta name="twitter:url" content="{{url()->current()}}">
     <meta name="twitter:image" content="@yield('image',url('/thumbnail.jpg'))">
     <link rel="canonical" href="{{url()->current()}}">
-    <link rel="alternate" hreflang="ja" href="{{url()->current()}}">
+    <link rel="alternate" hreflang="zh-tw" href="{{url()->current()}}">
     <link rel="alternate" type="application/atom+xml" title="News" href="{{url('/feed')}}">
 
     <link rel="icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
@@ -63,7 +62,7 @@
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
      (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-5105681373982866",
+      google_ad_client: "ca-pub-8981175802834036",
       enable_page_level_ads: true
     });
   </script>
@@ -148,111 +147,44 @@
                           </center>
                         </div> -->
                         <ul class="list-group">
-                          <li class="list-group-item active">人気記事</li>
+                          <li class="list-group-item active">熱門文章</li>
                           @foreach(\App\Article::popular()->take(10)->cursor() as $article)
-                          @if($loop->iteration == 1)
-                          <li class="list-group-item">
+                          <li class="list-group-item"  itemscope itemtype="http://schema.org/Article">
                            <div class="padding-wrap">
                             <div class="col-xs-3 thumbnail">
-                              <a class="thumbnail-link" href="https://lim-jp.com/archives/449">
-                                <img src="https://top.tsite.jp/static/top/sys/contents_image/036/631/669/36631669_107803.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
+                              <a class="thumbnail-link" href="{{$article->path()}}">
+                                <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
                               </a>
                             </div>
                             <div class="col-xs-9 title">
-                              <a class="title-link" href="https://lim-jp.com/archives/449">
-                               【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...
+                              <a class="title-link" href="{{$article->path()}}" itemprop="name">
+                               {{$article->title}}
                              </a>
                              <a class="description-link">
                               @php
-                              echo mb_strimwidth("ローラのインスタグラムは「写真が素敵」「服が可愛い」と何かと話題です。最近でもニュースになった「バギー」や「ジム」の画像から、ローラの写真加工に関する情報もまとめてみました。", 0, 120, '', 'utf8');
+                              echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
                               @endphp
                             </a>
                           </div>
                           <div class="clear"></div>
                           <div class="col-xs-12 cat">
                             <span class="cat-item">
-                              芸能
+                              {{$article->word->text}}
                             </span>
-                            <span class="cat-domain">
+                            <span class="cat-domain" itemprop="author">
                               @php
-                              echo parse_url("https://lim-jp.com/archives/449", PHP_URL_HOST);
+                              echo parse_url($article->url, PHP_URL_HOST);
                               @endphp
                             </span>
-                            <a href="https://lim-jp.com/archives/449" class="link-btn">サイトへ</a>
-                          </div>
-                          <span class="view">{{$article->view * 2 + 32}} view</span>
-                        </div>
-                      </li>
-                      @elseif($loop->iteration == 4)
-                          <li class="list-group-item">
-                           <div class="padding-wrap">
-                            <div class="col-xs-3 thumbnail">
-                              <a class="thumbnail-link" href="https://masakuraudo2.com/archives/2051">
-                                <img src="https://d2dcan0armyq93.cloudfront.net/photo/odai/600/9c06b4c415a1a864059861d99085a292_600.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
-                              </a>
-                            </div>
-                            <div class="col-xs-9 title">
-                              <a class="title-link" href="https://masakuraudo2.com/archives/2051">
-                               看護師・介護士のセクハラ被害の実態...
-                             </a>
-                             <a class="description-link">
-                              @php
-                              echo mb_strimwidth("私も急に抱きつかれたことがあって。しかも夜中だったからめっちゃ怖かったです。。手のひらにキスされたのはほんと嫌でした。速攻手指消毒しました", 0, 120, '', 'utf8');
-                              @endphp
-                            </a>
-                          </div>
-                          <div class="clear"></div>
-                          <div class="col-xs-12 cat">
-                            <span class="cat-item">
-                              医療
-                            </span>
-                            <span class="cat-domain">
-                              @php
-                              echo parse_url("https://masakuraudo2.com/archives/2051", PHP_URL_HOST);
-                              @endphp
-                            </span>
-                            <a href="https://masakuraudo2.com/archives/2051" class="link-btn">サイトへ</a>
+                            <a href="{{$article->path()}}" class="link-btn">詳細</a>
                           </div>
                           <span class="view">{{$article->view}} view</span>
                         </div>
                       </li>
-                      @endif
-                      <li class="list-group-item"  itemscope itemtype="http://schema.org/Article">
-                       <div class="padding-wrap">
-                        <div class="col-xs-3 thumbnail">
-                          <a class="thumbnail-link" href="{{$article->path()}}">
-                            <img src="{{$article->thumbnailPath()}}" alt="{{$article->title}}">
-                          </a>
-                        </div>
-                        <div class="col-xs-9 title">
-                          <a class="title-link" href="{{$article->path()}}" itemprop="name">
-                           {{$article->title}}
-                         </a>
-                         <a class="description-link">
-                          @php
-                          echo mb_strimwidth($article->description, 0, 120, '', 'utf8');
-                          @endphp
-                        </a>
-                      </div>
-                      <div class="clear"></div>
-                      <div class="col-xs-12 cat">
-                        <span class="cat-item">
-                          {{$article->word->text}}
-                        </span>
-                        <span class="cat-domain" itemprop="author">
-                          @php
-                          echo parse_url($article->url, PHP_URL_HOST);
-                          @endphp
-                        </span>
-                        <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
-                      </div>
-                      <span class="view">{{$article->view}} view</span>
-                    </div>
-                  </li>
-                  @endforeach
+                      @endforeach
 
-                </ul>
-                <ul class="list-group">
+                    </ul>
+                    <ul class="list-group">
 
                       <!-- <div class="block">
                         <center>
@@ -269,7 +201,7 @@
                           </center>
                         </div>
                       -->
-                      <li class="list-group-item active">新着記事</li>
+                      <li class="list-group-item active">新到文章</li>
                       @foreach(\App\Article::latest()->take(10)->cursor() as $article)
                       <li class="list-group-item" itemscope itemtype="http://schema.org/Article">
                         <div class="padding-wrap">
@@ -298,7 +230,7 @@
                             echo parse_url($article->url, PHP_URL_HOST);
                             @endphp
                           </span>
-                          <a href="{{$article->path()}}" class="link-btn">サイトへ</a>
+                          <a href="{{$article->path()}}" class="link-btn">詳細</a>
                         </div>
                         <span class="view">{{$article->view}} view</span>
                       </div>
@@ -314,7 +246,7 @@
                   -->
 
                   <ul class="list-group">
-                    <li class="list-group-item active">タグ</li>
+                    <li class="list-group-item active">標籤</li>
                   </ul>
                   <div id="tag-area">
                     @foreach(\App\Word::inRandomOrder()->take(200)->cursor() as $word)

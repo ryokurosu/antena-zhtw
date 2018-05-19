@@ -53,7 +53,7 @@ class SuggestWord extends Command
       foreach ($words as $word) {
         try {
           $client = new Client();
-          $sitemap = $client->request('GET',"https://www.google.com/complete/search?hl=en&q=hello&output=toolbar&q=" . urlencode($word->text));
+          $sitemap = $client->request('GET',"https://www.google.com/complete/search?hl=zh-tw&q=hello&output=toolbar&q=" . urlencode($word->text));
           $sitemap->filter('suggestion')->each(function($node) use (&$wordlist){
             $attr = $node->attr('data');
             foreach(explode(' ',$attr) as $w){

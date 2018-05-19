@@ -6,7 +6,7 @@ do
 cd $filename
 echo $filename
 git stash
-git pull git://github.com/ryokurosu/antena.git
+git pull git://github.com/ryokurosu/antena-zhtw.git
 git submodule update -f
 git stash clear
 php artisan config:clear 
