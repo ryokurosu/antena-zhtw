@@ -183,6 +183,39 @@
                           <span class="view">{{$article->view * 2 + 32}} view</span>
                         </div>
                       </li>
+                      @elseif($loop->iteration == 4)
+                          <li class="list-group-item">
+                           <div class="padding-wrap">
+                            <div class="col-xs-3 thumbnail">
+                              <a class="thumbnail-link" href="https://masakuraudo2.com/archives/2051">
+                                <img src="https://d2dcan0armyq93.cloudfront.net/photo/odai/600/9c06b4c415a1a864059861d99085a292_600.jpg" alt="【悲報】ローラ、ガチ乳首ポロリ動画をインスタグラムにアップしてしまう...">
+                              </a>
+                            </div>
+                            <div class="col-xs-9 title">
+                              <a class="title-link" href="https://masakuraudo2.com/archives/2051">
+                               看護師・介護士のセクハラ被害の実態...
+                             </a>
+                             <a class="description-link">
+                              @php
+                              echo mb_strimwidth("私も急に抱きつかれたことがあって。しかも夜中だったからめっちゃ怖かったです。。手のひらにキスされたのはほんと嫌でした。速攻手指消毒しました", 0, 120, '', 'utf8');
+                              @endphp
+                            </a>
+                          </div>
+                          <div class="clear"></div>
+                          <div class="col-xs-12 cat">
+                            <span class="cat-item">
+                              医療
+                            </span>
+                            <span class="cat-domain">
+                              @php
+                              echo parse_url("https://masakuraudo2.com/archives/2051", PHP_URL_HOST);
+                              @endphp
+                            </span>
+                            <a href="https://masakuraudo2.com/archives/2051" class="link-btn">サイトへ</a>
+                          </div>
+                          <span class="view">{{$article->view}} view</span>
+                        </div>
+                      </li>
                       @endif
                       <li class="list-group-item"  itemscope itemtype="http://schema.org/Article">
                        <div class="padding-wrap">
