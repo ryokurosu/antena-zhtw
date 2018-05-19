@@ -5,8 +5,8 @@ for filename in `find antena_* -maxdepth 0 -type d`
 do
 cd $filename
 echo $filename
-git stash
-git pull git://github.com/ryokurosu/antena-zhtw.git
+git fetch origin
+git reset --hard origin/master
 git submodule init
 git submodule update -f
 git stash clear
