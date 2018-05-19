@@ -375,3 +375,17 @@ https://news.mingpao.com/rss/ins/s00005.xml
 https://news.mingpao.com/rss/ins/s00006.xml
 https://news.mingpao.com/rss/ins/s00022.xml
 https://news.mingpao.com/rss/weather/rss.xml
+http://feeds.feedburner.com/cnaFirstNews
+http://feeds.feedburner.com/rsscna/PhotoAlbum
+http://feeds.feedburner.com/rsscna/politics
+http://feeds.feedburner.com/rsscna/social
+http://feeds.feedburner.com/rsscna/lifehealth
+http://feeds.feedburner.com/rsscna/finance
+http://feeds.feedburner.com/rsscna/technology
+http://feeds.feedburner.com/rsscna/intworld
+http://feeds.feedburner.com/rsscna/mainland
+http://feeds.feedburner.com/rsscna/stars
+http://feeds.feedburner.com/rsscna/sport
+http://feeds.feedburner.com/rsscna/local
+http://feeds.feedburner.com/rsscna/TopNewsforWeek
+http://feeds.feedburner.com/rsscna/video
