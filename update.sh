@@ -13,7 +13,6 @@ git submodule init
 git submodule sync
 git submodule foreach "(git checkout master; git pull)"
 php artisan config:clear 
-composer update
 filepublic=${filename:7}
 cd -
 mv $filename/schedule.sh schedule.sh
