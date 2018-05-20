@@ -44,6 +44,7 @@ class AddArticle extends Command
      */
     public function handle()
     {
+      ini_set("max_execution_time",180);
       $time_start = microtime(true);
       $this->count = 0;
 
