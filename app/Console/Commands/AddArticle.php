@@ -44,7 +44,7 @@ class AddArticle extends Command
      */
     public function handle()
     {
-      set_time_limit(120);
+      set_time_limit(180);
       $time_start = microtime(true);
       $this->count = 0;
 
