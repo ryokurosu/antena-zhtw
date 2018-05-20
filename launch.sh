@@ -10,6 +10,7 @@ sed -i -e "s/..\/vendor/..\/antena_$PROJECTNAME\/vendor/g" ./index.php
 sed -i -e "s/..\/bootstrap/..\/antena_$PROJECTNAME\/bootstrap/g" ./index.php
 cd ..
 cd antena_$PROJECTNAME
+composer global require hirak/prestissimo
 composer update
 mv .env.example .env
 echo "ドメインを入力"
