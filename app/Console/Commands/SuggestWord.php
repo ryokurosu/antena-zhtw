@@ -69,7 +69,7 @@ class SuggestWord extends Command
             }
           });
         } catch (Exception $e) {
-          postToDiscord($e);
+          echo $e->getMessage();
           continue;
         }
       }
