@@ -21,11 +21,14 @@ echo "データベースプレフィックスを入力 例)tyui"
 read DATABASE_PREFIX
 echo "サイト名を入力"
 read SITENAME
+echo "GoogleAnalyticsタグを入力"
+read GOOGLETAG
 sed -i -e "s/DOMAIN/$DOMAIN/g" ./.env
 sed -i -e "s/DATABASE_HOST/$DATABASE_HOST/g" ./.env
 sed -i -e "s/DATABASE_PREFIX/$DATABASE_PREFIX/g" ./.env
 sed -i -e "s/SITENAME/$SITENAME/g" ./.env
 sed -i -e "s/PROJECTNAME/$PROJECTNAME/g" ./.env
+sed -i -e "s/GOOGLETAG/$GOOGLETAG/" ./.env
 php artisan key:generate
 php artisan migrate
 php artisan get:start
